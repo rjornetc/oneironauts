@@ -7,6 +7,13 @@ class User < ActiveRecord::Base
          
   belongs_to :role
   
+  has_many :meanings
+  has_many :dream_signs
+  
+  has_many :sleep_logs
+  
+  has_many :logs
+  
   attr_accessor :login
   
   validates :username,

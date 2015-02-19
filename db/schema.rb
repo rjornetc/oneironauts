@@ -11,24 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150218224013) do
+ActiveRecord::Schema.define(version: 20150219221427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "dreams", force: :cascade do |t|
-    t.string   "title"
-    t.string   "content"
-    t.string   "characters"
-    t.string   "location"
-    t.string   "meaning"
-    t.string   "related_event"
-    t.string   "emotion"
-    t.integer  "rating"
-    t.integer  "votes"
+  create_table "dream_signs", force: :cascade do |t|
+    t.string   "name"
     t.integer  "user_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dreams", force: :cascade do |t|
+    t.integer  "user_id"
+    t.boolean  "public"
+    t.text     "content"
+    t.integer  "votes"
+    t.text     "interpretation"
+    t.string   "tag1"
+    t.string   "tag2"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "impressions", force: :cascade do |t|
@@ -56,8 +60,36 @@ ActiveRecord::Schema.define(version: 20150218224013) do
   add_index "impressions", ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index", using: :btree
   add_index "impressions", ["user_id"], name: "index_impressions_on_user_id", using: :btree
 
+  create_table "logs", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "points"
+    t.text     "description"
+    t.boolean  "notificable"
+    t.integer  "owner_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "meanings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "description"
+    t.integer  "votes"
+    t.boolean  "spam"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sleep_logs", force: :cascade do |t|
+    t.integer  "user_id"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.date     "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -85,6 +117,8 @@ ActiveRecord::Schema.define(version: 20150218224013) do
     t.integer  "role_id"
     t.string   "provider"
     t.string   "uid"
+    t.boolean  "public_profile"
+    t.boolean  "public_sleep_log"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
@@ -92,7 +126,7 @@ ActiveRecord::Schema.define(version: 20150218224013) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "widgets", force: :cascade do |t|
-    t.string   "name",        limit: 255
+    t.string   "name"
     t.text     "description"
     t.integer  "stock"
     t.datetime "created_at"
