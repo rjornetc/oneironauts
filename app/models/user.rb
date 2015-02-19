@@ -32,5 +32,13 @@ class User < ActiveRecord::Base
       #user.image = auth.info.image # assuming the user model has an image
     end
   end
+  
+  def self.new_with_session(params, session)
+      super.tap do |user|
+        if data = session["devise.twitter_data"]
+          user.username = data["nickname"] if user.username.blank?
+        end
+      end
+    end
 
 end
