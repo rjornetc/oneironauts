@@ -25,21 +25,13 @@ class User < ActiveRecord::Base
   
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
+      user.email    = change@me.please
       user.password = Devise.friendly_token[0,20]
-      user.username = auth.info.name   # assuming the user model has a name
-      #user.image = auth.info.image      assuming the user model has an image
+      user.username = auth.info.nickname   # assuming the user model has a name
+      user.set_default_role
+      #user.image = auth.info.image # assuming the user model has an image
     end
   end
-  
-  def self.new_with_session(params, session)
-      super.tap do |user|
-        if data = session["devise.twitter_data"]
-          user.email = data["email"] if user.email.blank?
-          user.username = data["username"] if user.username.blank?
-        end
-      end
-    end
   
   private
     def set_default_role
