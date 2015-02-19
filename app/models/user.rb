@@ -28,13 +28,9 @@ class User < ActiveRecord::Base
       user.email    = 'change@me.please'
       user.password = Devise.friendly_token[0,20]
       user.username = auth.nickname
-      user.set_default_role
+      user.role ||= Role.find_by_name('registered')
       #user.image = auth.info.image # assuming the user model has an image
     end
   end
-  
-  private
-    def set_default_role
-      self.role ||= Role.find_by_name('registered')
-    end
+
 end
