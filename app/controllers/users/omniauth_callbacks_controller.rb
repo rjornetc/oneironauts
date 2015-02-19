@@ -10,7 +10,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         session["devise.twitter_data"] = request.env["omniauth.auth"].except("extra")
         @user.email    = 'change@me.please'
         @user.password = Devise.friendly_token[0,20]
-        @user.username = auth.nickname
+        @user.username = request.env["omniauth.auth.nickname"]
         @user.role     ||= Role.find_by_name('registered')
         @user.save
         sign_in_and_redirect @user, :event => :authentication
