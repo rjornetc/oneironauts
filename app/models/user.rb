@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email    = 'change@me.please'
       user.password = Devise.friendly_token[0,20]
-      user.username = auth.info.nickname   # assuming the user model has a name
+      user.username = auth.nickname
       user.set_default_role
       #user.image = auth.info.image # assuming the user model has an image
     end
