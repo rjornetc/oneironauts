@@ -29,7 +29,6 @@ class User < ActiveRecord::Base
       user.password = Devise.friendly_token[0,20]
       user.username = auth.nickname
       user.role     ||= Role.find_by_name('registered')
-      user.save
       #user.image = auth.info.image # assuming the user model has an image
     end
   end
