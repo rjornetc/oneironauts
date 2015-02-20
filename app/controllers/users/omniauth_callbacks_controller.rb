@@ -11,7 +11,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         @user.email    = session["devise.twitter_data"]['info']['nickname']+'@change.me'
         @user.password = Devise.friendly_token[0,20]
         @user.username = session["devise.twitter_data"]['info']['nickname']
-        @user.role     ||= Role.find_by_name('registered')
+        @user.role     = Role.find_by_name('registered')
         @user.confirmed_at = Time.now
         sign_in_and_redirect @user, :event => :authentication
       end

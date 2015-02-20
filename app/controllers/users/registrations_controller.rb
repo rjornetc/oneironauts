@@ -3,38 +3,40 @@ class Users::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    authorize @user
+  end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    authorize @user
+    @user.role = Role.find(1)
+    @user.save
+  end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    authorize @user
+  end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    authorize @user
+  end
 
   # DELETE /resource
-  # def destroy
-  #   super
-  # end
+  def destroy
+    authorize @user
+  end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
   # in to be expired now. This is useful if the user wants to
   # cancel oauth signing in/up in the middle of the process,
   # removing all OAuth session data.
-  # def cancel
-  #   super
-  # end
+  def cancel
+    authorize @user
+  end
 
   # protected
 
@@ -60,7 +62,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   
   def show
       @user = User.find(params[:id])
-  
+      authorize @user
       respond_to do |format|
           format.html # show.html.erb
           format.xml { render :xml => @user }

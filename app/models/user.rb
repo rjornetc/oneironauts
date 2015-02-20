@@ -47,7 +47,7 @@ class User < ActiveRecord::Base
           user.email    = data['info']['nickname']+'@change.me'
           user.password = Devise.friendly_token[0,20]
           user.username = data['info']['nickname']
-          user.role     ||= Role.find_by_name('registered')
+          user.role     = Role.find_by_name('registered')
         end
       end
     end
