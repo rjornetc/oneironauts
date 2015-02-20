@@ -8,13 +8,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         set_flash_message(:notice, :success, :kind => "Twitter") if is_navigational_format?
       else
         session["devise.twitter_data"] = request.env["omniauth.auth"].except("extra")
-        @user.email    = request.env["omniauth.auth.info.nickname"]+'@change.me'
-        @user.password = Devise.friendly_token[0,20]
-        @user.username = request.env["omniauth.auth.info.nickname"]
-        @user.role     ||= Role.find_by_name('registered')
-        @user.confirmed_at = Time.now
-        @user.save
-        sign_in_and_redirect @user, :event => :authentication
+        redirect_to new_user_registration_url
       end
     end
 end
