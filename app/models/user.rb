@@ -42,9 +42,10 @@ class User < ActiveRecord::Base
   def self.new_with_session(params, session)
       super.tap do |user|
         if data = session["devise.twitter_data"]
-          user.email    = auth.info.nickname+'@change.me'
+          puts data
+          user.email    = data['info']['nickname']+'@change.me'
           user.password = Devise.friendly_token[0,20]
-          user.username = auth.nickname
+          user.username = data['info']['nickname']
           user.role     ||= Role.find_by_name('registered')
         end
       end
