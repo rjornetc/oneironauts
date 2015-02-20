@@ -18,7 +18,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
     
    def update_resource(resource, params)
-       if current_user.provider
+       if !current_user.provider.blank?
          params.delete("current_password")
          resource.update_without_password(params)
        else
