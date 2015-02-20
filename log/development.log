@@ -7184,3 +7184,4 @@ Processing by WelcomeController#index as HTML
   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
   Rendered shared/_left_sidebar_default.html.erb (2.4ms)
 Completed 200 OK in 200ms (Views: 199.3ms | ActiveRecord: 0.5ms)
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
