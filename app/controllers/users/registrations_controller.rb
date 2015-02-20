@@ -5,6 +5,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
+    @user = User.new(params[:user])
     @user.role = Role.find(1)
     @user.save
   end
