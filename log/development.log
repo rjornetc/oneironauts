@@ -12514,3 +12514,556 @@ Started GET "/assets/welcome.js?body=1" for ::1 at 2015-02-20 22:46:31 +0100
 
 
 Started GET "/assets/application.js?body=1" for ::1 at 2015-02-20 22:46:31 +0100
+
+
+Started GET "/user/1/show" for ::1 at 2015-02-21 00:10:53 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Users::RegistrationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (1.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 106ms
+
+ActionView::MissingTemplate (Missing template users/registrations/show, devise/registrations/show, devise/show, application/show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/alvaro/Rails/oneironauts/app/views"
+  * "/Library/Ruby/Gems/2.0.0/gems/devise-3.4.1/app/views"
+):
+  app/controllers/users/registrations_controller.rb:64:in `show'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (32.2ms)
+
+
+Started GET "/user/1/show" for ::1 at 2015-02-21 00:11:47 +0100
+Processing by Users::RegistrationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered devise/registrations/show.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation.html.erb (0.6ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered shared/_left_sidebar_default.html.erb (5.8ms)
+Completed 200 OK in 2763ms (Views: 2738.8ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/dream_signs.css?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/dreams.css?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/finish_sign_up.css?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/meanings.css?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/index.css?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/logs.css?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/sleep_logs.css?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/welcome.css?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/widgets.css?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/dream_signs.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/dreams.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/finish_sign_up.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/index.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/logs.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/meanings.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/sleep_logs.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/welcome.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/widgets.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-02-21 00:11:50 +0100
+
+
+Started GET "/user/alvaroelcapullo/show" for ::1 at 2015-02-21 00:12:06 +0100
+Processing by Users::RegistrationsController#show as HTML
+  Parameters: {"username"=>"alvaroelcapullo"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", nil]]
+Completed 404 Not Found in 6ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=):
+  app/controllers/users/registrations_controller.rb:62:in `show'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.8ms)
+
+
+Started GET "/user/1/show" for ::1 at 2015-02-21 00:12:20 +0100
+Processing by Users::RegistrationsController#show as HTML
+  Parameters: {"username"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", nil]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=):
+  app/controllers/users/registrations_controller.rb:62:in `show'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.5ms)
+
+
+Started GET "/user/1/show" for ::1 at 2015-02-21 00:12:21 +0100
+Processing by Users::RegistrationsController#show as HTML
+  Parameters: {"username"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", nil]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=):
+  app/controllers/users/registrations_controller.rb:62:in `show'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.9ms)
+
+
+Started GET "/user/1/show" for ::1 at 2015-02-21 00:12:26 +0100
+Processing by Users::RegistrationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered devise/registrations/show.html.erb within layouts/application (0.1ms)
+  Rendered shared/_navigation.html.erb (0.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_left_sidebar_default.html.erb (3.3ms)
+Completed 200 OK in 272ms (Views: 250.0ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/dream_signs.css?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/finish_sign_up.css?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/dreams.css?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/sleep_logs.css?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/logs.css?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/meanings.css?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/index.css?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/widgets.css?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/welcome.css?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/dreams.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/index.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/meanings.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/welcome.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/dream_signs.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/finish_sign_up.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/logs.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/sleep_logs.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/assets/widgets.js?body=1" for ::1 at 2015-02-21 00:12:26 +0100
+
+
+Started GET "/user/1/show" for ::1 at 2015-02-21 00:12:54 +0100
+Processing by Users::RegistrationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered devise/registrations/show.html.erb within layouts/application (0.4ms)
+  Rendered shared/_navigation.html.erb (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_left_sidebar_default.html.erb (2.4ms)
+Completed 200 OK in 237ms (Views: 234.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/dream_signs.css?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/dreams.css?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/finish_sign_up.css?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/index.css?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/sleep_logs.css?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/logs.css?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/meanings.css?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/widgets.css?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/welcome.css?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/dreams.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/index.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/welcome.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/finish_sign_up.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/logs.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/meanings.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/widgets.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/dream_signs.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/assets/sleep_logs.js?body=1" for ::1 at 2015-02-21 00:12:54 +0100
+
+
+Started GET "/user/1/show" for ::1 at 2015-02-21 00:12:59 +0100
+Processing by Users::RegistrationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered devise/registrations/show.html.erb within layouts/application (0.5ms)
+  Rendered shared/_navigation.html.erb (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_left_sidebar_default.html.erb (2.9ms)
+Completed 200 OK in 216ms (Views: 213.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/dream_signs.css?body=1" for ::1 at 2015-02-21 00:12:59 +0100
+
+
+Started GET "/assets/dreams.css?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/finish_sign_up.css?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/logs.css?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/index.css?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/meanings.css?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/sleep_logs.css?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/welcome.css?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/widgets.css?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/dreams.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/index.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/dream_signs.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/finish_sign_up.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/logs.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/meanings.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/welcome.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/sleep_logs.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/assets/widgets.js?body=1" for ::1 at 2015-02-21 00:13:00 +0100
+
+
+Started GET "/" for ::1 at 2015-02-21 00:13:03 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.erb within layouts/application (0.4ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered shared/_left_sidebar_default.html.erb (2.4ms)
+Completed 200 OK in 238ms (Views: 236.6ms | ActiveRecord: 0.5ms)
