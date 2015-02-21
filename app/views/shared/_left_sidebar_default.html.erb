@@ -1,5 +1,4 @@
 <h3>Sidebar</h3>
-<% if(!current_user) %>
     <%= form_for(:user, :url => session_path(:user)) do |f| %>
       <%= f.text_field :email %><br />
       <%= f.password_field :password %><br />
@@ -9,4 +8,3 @@
       <%= link_to "Forgot your password?", new_password_path(:user) %>
       <%= link_to "Sign up", new_user_registration_path() %>
     <% end %>
-<% end %>
