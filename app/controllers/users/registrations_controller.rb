@@ -11,6 +11,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if session[:omniauth] == nil
         if verify_recaptcha
             super do
+                resource.points = 50
+                resource.bio = ''
+                resource.public_sleep_log = true
                 resource.public_profile = true
                 resource.role = Role.find_by_name('registered')
                 resource.save
@@ -22,6 +25,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
         end
     else
         super do
+            resource.points = 50
+            resource.bio = ''
+            resource.public_sleep_log = true
             resource.public_profile = true
             resource.role = Role.find_by_name('registered')
             resource.save
