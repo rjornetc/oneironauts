@@ -5,13 +5,24 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    if verify_recaptcha(:model => @post, :message => "Oh! It looks like you haven't entered correctly the correct Captcha")
+    if session[:omniauth] == nil
+        if verify_recaptcha
+            super do
+                resource.role = Role.find_by_name('registered')
+                resource.save
+            end
+        else
+            flash.now[:alert] = "There was an error with the captcha code below. Please re-enter the code."      
+            flash.delete :recaptcha_error
+            render :new
+        end
     else
         super do
             resource.role = Role.find_by_name('registered')
             resource.save
         end
-    end
+        session[:omniauth] = nil unless @user.new_record? #OmniAuth
+      end
   end
 
   # GET /resource/edit
