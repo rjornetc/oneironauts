@@ -3,6 +3,12 @@
 <div class="profile">
     <%= @user.username %>
     <%= @user.points %>
-    <%= image_tag current_user.gravatar_url %>
     <%= @user.bio %>
+    
+    <% if @user.avatar %>
+        <%= image_tag current_user.avatar %>
+    <% else %>
+        <%= image_tag current_user.gravatar_url %>
+    <% end %>
+    
 </div>

@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   
   include Gravtastic
   gravtastic
+  
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100#" }    validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
          
   belongs_to :role
   
@@ -35,6 +37,11 @@ class User < ActiveRecord::Base
   
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.points = 50
+      user.bio = ''
+      user.public_sleep_log = true
+      user.public_profile = true
+      user.avatar   = auth.info.image
       user.email    = auth.info.nickname+'@change.me'
       user.password = Devise.friendly_token[0,20]
       user.username = auth.nickname
@@ -46,7 +53,11 @@ class User < ActiveRecord::Base
   def self.new_with_session(params, session)
       super.tap do |user|
         if data = session["devise.twitter_data"]
-          puts data
+          user.points = 50
+          user.bio = ''
+          user.public_sleep_log = true
+          user.public_profile = true
+          user.avatar   = data['info']['image']
           user.email    = data['info']['nickname']+'@change.me'
           user.password = Devise.friendly_token[0,20]
           user.username = data['info']['nickname']

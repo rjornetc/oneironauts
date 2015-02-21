@@ -8,6 +8,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         set_flash_message(:notice, :success, :kind => "Twitter") if is_navigational_format?
       else
         session["devise.twitter_data"] = request.env["omniauth.auth"].except("extra")
+        @user.points = 50
+        @user.bio = ''
+        @user.public_sleep_log = true
+        @user.public_profile = true
+        @user.avatar   = session["devise.twitter_data"]['info']['image']
         @user.email    = session["devise.twitter_data"]['info']['nickname']+'@change.me'
         @user.password = Devise.friendly_token[0,20]
         @user.username = session["devise.twitter_data"]['info']['nickname']

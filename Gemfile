@@ -11,6 +11,7 @@ gem 'pundit'
 gem 'impressionist'
 gem 'omniauth-twitter'
 gem 'gravtastic'
+gem 'paperclip'
 gem "recaptcha", :require => "recaptcha/rails"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
