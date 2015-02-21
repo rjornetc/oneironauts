@@ -15258,3 +15258,146 @@ Started GET "/assets/widgets.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
 
 
 Started GET "/assets/application.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/" for ::1 at 2015-02-21 16:33:56 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.erb within layouts/application (1.1ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+  Rendered shared/_left_sidebar_default.html.erb (30.2ms)
+Completed 200 OK in 634ms (Views: 605.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/dream_signs.css?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/index.css?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/logs.css?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/finish_sign_up.css?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/dreams.css?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/meanings.css?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/sleep_logs.css?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/welcome.css?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/widgets.css?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/jquery.turbolinks.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/dream_signs.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/dreams.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/finish_sign_up.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/index.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/logs.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/meanings.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/sleep_logs.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/welcome.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/widgets.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-02-21 16:33:57 +0100
+
+
+Started GET "/users/sign_up" for ::1 at 2015-02-21 16:33:59 +0100
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/registrations/new.html.erb within layouts/application (10.7ms)
+Completed 500 Internal Server Error in 42ms
+
+ActionView::Template::Error (No public key specified.):
+    26:     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    27:   </div>
+    28:   
+    29:   <%= recaptcha_tags :display => {:theme => 'clear'}%>
+    30: 
+    31:   <div class="actions">
+    32:     <%= f.submit "Sign up" %>
+  app/views/devise/registrations/new.html.erb:29:in `block in _app_views_devise_registrations_new_html_erb___2222298432224726840_70359922155020'
+  app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb___2222298432224726840_70359922155020'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (34.1ms)
