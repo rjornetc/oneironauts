@@ -6,7 +6,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     build_resource
-    resource.tag_list = params[:tags]
     resource.role = Role.find_by_name('registered')
     if resource.save
       if resource.active_for_authentication?
