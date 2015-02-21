@@ -5,9 +5,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    super do
-        resource.role = Role.find_by_name('registered')
-        resource.save
+    if verify_recaptcha(:model => @post, :message => "Oh! It looks like you haven't entered correctly the correct Captcha")
+    else
+        super do
+            resource.role = Role.find_by_name('registered')
+            resource.save
+        end
     end
   end
 
