@@ -1,4 +1,7 @@
 <h3>Sidebar</h3>
+<% if user_signed_in? %> 
+
+<% else %>
     <%= form_for(:user, :url => session_path(:user)) do |f| %>
       <%= f.text_field :email %><br />
       <%= f.password_field :password %><br />
@@ -6,4 +9,4 @@
       <%= f.label :remember_me %><br />
       <%= f.submit 'Sign in' %><br />
     <% end %>
-    <%= render 'devise/shared/links' %>
+<% end %>
