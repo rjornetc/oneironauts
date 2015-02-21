@@ -5,7 +5,7 @@
     <%= @user.points %>
     <%= @user.bio %>
     
-    <% if @user.avatar %>
+    <% if @user.avatar.exists? %>
         <%= image_tag current_user.avatar.url %>
     <% else %>
         <%= image_tag current_user.gravatar_url %>
