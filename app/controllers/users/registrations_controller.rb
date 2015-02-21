@@ -2,12 +2,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
 
+  include Pundit
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
 
   # POST /resource
   def create
     if session[:omniauth] == nil
         if verify_recaptcha
             super do
+                resource.public_profile = true
                 resource.role = Role.find_by_name('registered')
                 resource.save
             end
@@ -18,6 +22,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         end
     else
         super do
+            resource.public_profile = true
             resource.role = Role.find_by_name('registered')
             resource.save
         end
@@ -84,5 +89,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
     
     def update_resource(resource, params)
         resource.update_without_password(params)
+    end
+    
+  private
+  
+    def user_not_authorized
+      flash[:alert] = "This user's profile is private."
+      redirect_to(request.referrer || root_path)
     end
 end
