@@ -14390,3 +14390,50 @@ Started GET "/assets/meanings.js?body=1" for ::1 at 2015-02-21 00:31:53 +0100
 
 
 Started GET "/assets/application.js?body=1" for ::1 at 2015-02-21 00:31:53 +0100
+
+
+Started GET "/users/sign_up" for ::1 at 2015-02-21 15:33:45 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (86.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/registrations/new.html.erb within layouts/application (258.9ms)
+Completed 500 Internal Server Error in 528ms
+
+ActionView::Template::Error (No public key specified.):
+    26:     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    27:   </div>
+    28:   
+    29:   <%= recaptcha_tags %>
+    30: 
+    31:   <div class="actions">
+    32:     <%= f.submit "Sign up" %>
+  app/views/devise/registrations/new.html.erb:29:in `block in _app_views_devise_registrations_new_html_erb___3391735350347206365_70265689062400'
+  app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb___3391735350347206365_70265689062400'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.9ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (37.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (71.6ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-02-21 15:33:47 +0100
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/registrations/new.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (No public key specified.):
+    26:     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    27:   </div>
+    28:   
+    29:   <%= recaptcha_tags %>
+    30: 
+    31:   <div class="actions">
+    32:     <%= f.submit "Sign up" %>
+  app/views/devise/registrations/new.html.erb:29:in `block in _app_views_devise_registrations_new_html_erb___3391735350347206365_70265689062400'
+  app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb___3391735350347206365_70265689062400'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.6ms)
