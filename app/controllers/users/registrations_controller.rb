@@ -12,8 +12,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
                 resource.save
             end
         else
-            flash.now[:alert] = "There was an error with the captcha code below. Please re-enter the code."      
+            flash[:alert] = "There was an error with the captcha code below. Please re-enter the code."      
             flash.delete :recaptcha_error
+            redirect_to new_user_registration_path
         end
     else
         super do

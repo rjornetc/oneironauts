@@ -14437,3 +14437,824 @@ ActionView::Template::Error (No public key specified.):
   Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
   Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
   Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.6ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-02-21 16:15:35 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/registrations/new.html.erb within layouts/application (76.0ms)
+Completed 500 Internal Server Error in 144ms
+
+ActionView::Template::Error (No public key specified.):
+    26:     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    27:   </div>
+    28:   
+    29:   <%= recaptcha_tags %>
+    30: 
+    31:   <div class="actions">
+    32:     <%= f.submit "Sign up" %>
+  app/views/devise/registrations/new.html.erb:29:in `block in _app_views_devise_registrations_new_html_erb___3815995248969200049_70153456320940'
+  app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb___3815995248969200049_70153456320940'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.9ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-02-21 16:15:38 +0100
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/registrations/new.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (No public key specified.):
+    26:     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    27:   </div>
+    28:   
+    29:   <%= recaptcha_tags %>
+    30: 
+    31:   <div class="actions">
+    32:     <%= f.submit "Sign up" %>
+  app/views/devise/registrations/new.html.erb:29:in `block in _app_views_devise_registrations_new_html_erb___3815995248969200049_70153456320940'
+  app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb___3815995248969200049_70153456320940'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (25.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-02-21 16:18:15 +0100
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/registrations/new.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (No public key specified.):
+    26:     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    27:   </div>
+    28:   
+    29:   <%= recaptcha_tags %>
+    30: 
+    31:   <div class="actions">
+    32:     <%= f.submit "Sign up" %>
+  app/views/devise/registrations/new.html.erb:29:in `block in _app_views_devise_registrations_new_html_erb___3815995248969200049_70153456320940'
+  app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb___3815995248969200049_70153456320940'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (24.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-02-21 16:18:16 +0100
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/registrations/new.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (No public key specified.):
+    26:     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    27:   </div>
+    28:   
+    29:   <%= recaptcha_tags %>
+    30: 
+    31:   <div class="actions">
+    32:     <%= f.submit "Sign up" %>
+  app/views/devise/registrations/new.html.erb:29:in `block in _app_views_devise_registrations_new_html_erb___3815995248969200049_70153456320940'
+  app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb___3815995248969200049_70153456320940'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-02-21 16:18:22 +0100
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/registrations/new.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (No public key specified.):
+    26:     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    27:   </div>
+    28:   
+    29:   <%= recaptcha_tags %>
+    30: 
+    31:   <div class="actions">
+    32:     <%= f.submit "Sign up" %>
+  app/views/devise/registrations/new.html.erb:29:in `block in _app_views_devise_registrations_new_html_erb___3815995248969200049_70153456320940'
+  app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb___3815995248969200049_70153456320940'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (53.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (69.3ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-02-21 16:18:55 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (7.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (64.0ms)
+  Rendered shared/_navigation.html.erb (0.4ms)
+  Rendered shared/_left_sidebar_default.html.erb (18.2ms)
+Completed 200 OK in 1162ms (Views: 1106.8ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-02-21 16:18:57 +0100
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.2ms)
+  Rendered shared/_navigation.html.erb (0.1ms)
+  Rendered shared/_left_sidebar_default.html.erb (3.3ms)
+Completed 200 OK in 320ms (Views: 318.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/dream_signs.css?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/dreams.css?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/finish_sign_up.css?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/logs.css?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/index.css?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/meanings.css?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/sleep_logs.css?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/welcome.css?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/widgets.css?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/dream_signs.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/dreams.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/finish_sign_up.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/index.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/logs.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/meanings.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/sleep_logs.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/welcome.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started GET "/assets/widgets.js?body=1" for ::1 at 2015-02-21 16:18:57 +0100
+
+
+Started POST "/users" for ::1 at 2015-02-21 16:19:08 +0100
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tZp7d4EEcWQWTMk8YY+CMi99OCl45O7HUDo0fJvRCOOXdUOxFYiPhXQKDZoKwqkjDJtOUn6vItp+bvYNuU+Jhg==", "user"=>{"username"=>"asdsda", "email"=>"123456@sad.asdsadsa", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "recaptcha_challenge_field"=>"03AHJ_VutbMJQs_RlbCmcU9efZ3572fkAceYD7RdS04aPq_J2cvzGv3xLu_k4OYj_KCyhokoZsOuRGsgu_PlyqaUHFSJMRbWSswQNHmcLTmcgpOD25x9rUUmrfWsFIZxg1PWQSIVxnsl0x_jZrzBwRyqQepbtHLlRClxQ5IUNqRNL7AoOmZAanUqmbhAkeTDPZb_v4XcnWzTzFbkDhs6U0jME1S6ByYbF3K0FXjSBERb_4aptvpGInA7Y142mplpkXHlSqT99FsYuA", "recaptcha_response_field"=>"", "commit"=>"Sign up"}
+Completed 500 Internal Server Error in 71ms
+
+ActionView::MissingTemplate (Missing template users/registrations/create, devise/registrations/create, devise/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/alvaro/Rails/oneironauts/app/views"
+  * "/Library/Ruby/Gems/2.0.0/gems/devise-3.4.1/app/views"
+):
+  actionview (4.2.0) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.0) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.0) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.0) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.0) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.0) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.0) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.0) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.0) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.0) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.0) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.2.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (4.2.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.2.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.2.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.0) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `block in halting_and_conditional'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `block in halting_and_conditional'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `block in halting_and_conditional'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:92:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_process_action_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.0) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal.rb:236:in `block in action'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:42:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/routing/mapper.rb:49:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:802:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.0) lib/rack/etag.rb:24:in `call'
+  rack (1.6.0) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.0) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:647:in `call'
+  activerecord (4.2.0) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  puma (2.11.1) lib/puma/server.rb:507:in `handle_request'
+  puma (2.11.1) lib/puma/server.rb:375:in `process_client'
+  puma (2.11.1) lib/puma/server.rb:262:in `block in run'
+  puma (2.11.1) lib/puma/thread_pool.rb:104:in `call'
+  puma (2.11.1) lib/puma/thread_pool.rb:104:in `block in spawn_thread'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.9ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (21.8ms)
+
+
+Started POST "/users" for ::1 at 2015-02-21 16:20:20 +0100
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tZp7d4EEcWQWTMk8YY+CMi99OCl45O7HUDo0fJvRCOOXdUOxFYiPhXQKDZoKwqkjDJtOUn6vItp+bvYNuU+Jhg==", "user"=>{"username"=>"asdsda", "email"=>"123456@sad.asdsadsa", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "recaptcha_challenge_field"=>"03AHJ_VuvuW9Lfy8np2hKNh3Bh90KGPWfYhtfMq1KA7_7cYm_3q0DucXViGth-gGCFQvESq9M1qCwaYGX6hiV4_AgRQqsLyDqB-0rFbubxcAEfQHH7AvDLLxZ3vQtwDPFL82w7C3SfeN20jUlP6Cb4PwAoV1ihCBJNHZGRHJl4Vi6VY-mgMY63IcW5c9Swzgm2pfEkcIUFquLE2KpctVyb7ct02YDHeBvoyFUMq_7qQbxvftFtzVE7KsQZVywRjT_6eJAz3BTiVBPR", "recaptcha_response_field"=>"", "commit"=>"Sign up"}
+  Rendered devise/registrations/new.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 162ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h2>Sign up</h2>
+    2: 
+    3: <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    4:   <%= devise_error_messages! %>
+    5: 
+    6:   <div class="field">
+  app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb__2163724868139288666_70299865263820'
+  app/controllers/users/registrations_controller.rb:15:in `create'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.7ms)
+
+
+Started POST "/users" for ::1 at 2015-02-21 16:20:59 +0100
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tZp7d4EEcWQWTMk8YY+CMi99OCl45O7HUDo0fJvRCOOXdUOxFYiPhXQKDZoKwqkjDJtOUn6vItp+bvYNuU+Jhg==", "user"=>{"username"=>"asdsda", "email"=>"123456@sad.asdsadsa", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "recaptcha_challenge_field"=>"03AHJ_VuulOOqflO4jSN2i9iH_SUcNq1XfNS2GFROJyVQvR0UIKu1yYa1crN1jfntcRMrJXIgbHXpCTMRD-C6G4RjPV_1w0s-4Sm7WKemYidtGCPEXeLe8I3woTzGmEshMHAtt8oDez8fyskdhq-tyHydh_KRnInbmbQwnvViT9T7BYDadrX4SSMioIt7CqjF3V0CeQlyZ8tVmfiAmdmpwJ2Zu_Qgl-DEEbXOI7mDCOHWHM4B5Y79x5RMkAJl_rRGcbgRLkk9L6mlG", "recaptcha_response_field"=>"", "commit"=>"Sign up"}
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 87ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-02-21 16:20:59 +0100
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.9ms)
+  Rendered shared/_navigation.html.erb (0.1ms)
+  Rendered shared/_left_sidebar_default.html.erb (5.7ms)
+Completed 200 OK in 343ms (Views: 319.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-02-21 16:21:13 +0100
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (5.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.9ms)
+  Rendered shared/_navigation.html.erb (0.1ms)
+  Rendered shared/_left_sidebar_default.html.erb (3.2ms)
+Completed 200 OK in 338ms (Views: 316.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/dream_signs.css?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/dreams.css?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/finish_sign_up.css?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/index.css?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/logs.css?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/meanings.css?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/sleep_logs.css?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/welcome.css?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/widgets.css?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/dream_signs.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/dreams.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/finish_sign_up.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/index.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/logs.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/meanings.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/sleep_logs.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/welcome.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/widgets.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-02-21 16:21:13 +0100
+
+
+Started POST "/users" for ::1 at 2015-02-21 16:21:22 +0100
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"abeQSt3cXrFUwcslflCg7mV/C/Y67BrzJfx6S50kqXJLWKiMSVCgUDaHD4MVHYv/Rpl9jTyn1u4LqLg6v7ooFw==", "user"=>{"username"=>"asd23456", "email"=>"asd@asd123.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "recaptcha_challenge_field"=>"03AHJ_Vuv6k-zPlOaW6wFM8WcFBNdUx-Yp9GsCz4RxxtZNhm-xwDyNLH_R4uYyZpQ7D_Zfk7ZVIsLkYGOYMZfBKWmpdT8zqJa3Twn9u5t9wRohKvsCWoFy7UJ_K5ueQQZit3VtX8FNtOx7TPPNdQ694SL3JhfqaAyqgFSmcbrZ7QbFRilHjwH8RPxkC_izTlW4-f86qHMYQgPfMMEsPL_mPUM1vMd-XwOjLQ1RONXUsowAXRb5vsvQO55D9Eq1VMibnAqZq-oVIwBN", "recaptcha_response_field"=>"", "commit"=>"Sign up"}
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 72ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-02-21 16:21:22 +0100
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.3ms)
+  Rendered shared/_navigation.html.erb (0.1ms)
+  Rendered shared/_left_sidebar_default.html.erb (3.2ms)
+Completed 200 OK in 276ms (Views: 274.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/dream_signs.css?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/dreams.css?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/logs.css?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/index.css?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/finish_sign_up.css?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/meanings.css?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/sleep_logs.css?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/welcome.css?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/widgets.css?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/dream_signs.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/dreams.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/finish_sign_up.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/index.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/logs.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/meanings.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/sleep_logs.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/welcome.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/widgets.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-02-21 16:21:22 +0100
+
+
+Started POST "/users" for ::1 at 2015-02-21 16:21:33 +0100
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XnkG4x+VDeMd5Yq6eg6FajznR00zFll1/pDT7MuJn+F8lj4lixnzAn+jThwRQ657HwExNjVdlWjQxBGd6RcehA==", "user"=>{"username"=>"sadsad", "email"=>"sadsda@sadsa.asd", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "recaptcha_challenge_field"=>"03AHJ_VutgPRcj4GGFeF5EpR-xPYMTQlGKRj78uuH2kDjnPxUdHLOV6A69qJueANJLcvuTATNjhybipUuCpv7rrKNA3aEonYZTH_O3rV6ILls_G_6gS2hlw42I1gQ5FSy8mMTMRKG2nFmizBlltUNSCtd4Kea-FL_7v6IiTHIPd14G-C55XgAZzN3VYPWvQZj5dFPw2Z7Gp-2NbQqmNYMK0Q2GlNqSijE8lUruYcxYmjJ1BTBWPKMciLG8knQmKYV-y2X_LBUBJ_3j", "recaptcha_response_field"=>"221", "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (78.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'sadsda@sadsa.asd' LIMIT 1[0m
+  [1m[35mUser Exists (14.6ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('sadsad') LIMIT 1
+  [1m[36mUser Load (21.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["confirmation_token", "6b8128b1d4e9c669e8115c08b2bf35eecc26ab704aa05475172a6aaf9310b300"]]
+  [1m[35mSQL (110.7ms)[0m  INSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["username", "sadsad"], ["email", "sadsda@sadsa.asd"], ["encrypted_password", "$2a$10$Y/EXuoDQQUadfjkpIJTnuuv3vBm.FHTI08FnceZzv0fa1foXlhvMq"], ["created_at", "2015-02-21 15:21:33.643257"], ["updated_at", "2015-02-21 15:21:33.643257"], ["confirmation_token", "6b8128b1d4e9c669e8115c08b2bf35eecc26ab704aa05475172a6aaf9310b300"], ["confirmation_sent_at", "2015-02-21 15:21:34.311472"]]
+  Rendered devise/mailer/confirmation_instructions.html.erb (2.9ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 297.1ms
+
+Sent mail to sadsda@sadsa.asd (51.8ms)
+Date: Sat, 21 Feb 2015 16:21:34 +0100
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: sadsda@sadsa.asd
+Message-ID: <54e8a27ec7854_e493feff98eea1c38657@MacBook-Pro-2.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome sadsda@sadsa.asd!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=V_E9hJhF-_ztBVDCbxtV">Confirm my account</a></p>
+
+  [1m[36m (828.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mRole Load (29.7ms)[0m  SELECT  "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT 1  [["name", "registered"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."username") = LOWER('sadsad') AND "users"."id" != 2) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "role_id" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["role_id", 1], ["updated_at", "2015-02-21 15:21:35.776424"], ["id", 2]]
+  [1m[35m (15.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7  [["last_sign_in_at", "2015-02-21 15:21:35.820037"], ["current_sign_in_at", "2015-02-21 15:21:35.820037"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", "2015-02-21 15:21:35.822420"], ["id", 2]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 2490ms (ActiveRecord: 1104.5ms)
+
+
+Started GET "/" for ::1 at 2015-02-21 16:21:35 +0100
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.erb within layouts/application (0.4ms)
+  Rendered shared/_navigation.html.erb (0.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered shared/_left_sidebar_default.html.erb (4.0ms)
+Completed 200 OK in 244ms (Views: 242.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/dreams.css?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/dream_signs.css?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/meanings.css?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/logs.css?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/index.css?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/finish_sign_up.css?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/sleep_logs.css?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/welcome.css?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/widgets.css?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/dream_signs.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/dreams.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/finish_sign_up.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/index.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/logs.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/meanings.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/sleep_logs.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/welcome.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/widgets.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-02-21 16:21:36 +0100
