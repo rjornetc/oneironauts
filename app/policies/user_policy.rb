@@ -7,7 +7,7 @@ class UserPolicy
   end
 
   def show?
-    @record.public_profile or (@record == @user) or @user and @user.role.name == "admin"
+    @record.public_profile || (@record == @user) || (@user && @user.role.name == "admin")
   end
 
   def update?
