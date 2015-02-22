@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
       user.avatar   = auth.info.image
       user.email    = auth.info.nickname+'@change.me'
       user.password = Devise.friendly_token[0,20]
-      user.username = auth.nickname
+      user.username = auth.info.nickname
       #user.image = auth.info.image # assuming the user model has an image
     end
   end
