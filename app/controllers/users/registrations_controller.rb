@@ -50,6 +50,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # DELETE /resource
   def destroy
     authorize @user
+    super
   end
 
   # GET /resource/cancel
@@ -59,6 +60,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # removing all OAuth session data.
   def cancel
     authorize @user
+    super
   end
 
   # protected
