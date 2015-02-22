@@ -9,19 +9,21 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     if session[:omniauth] == nil
-        if verify_recaptcha
-            super do
-                resource.points = 50
-                resource.bio = ''
-                resource.public_sleep_log = true
-                resource.public_profile = true
-                resource.role = Role.find_by_name('registered')
-                resource.save
-            end
-        else
-            flash[:alert] = "There was an error with the captcha code below. Please re-enter the code."      
-            flash.delete :recaptcha_error
-            redirect_to new_user_registration_path
+        super do
+            resource.points = 50
+            resource.bio = ''
+            resource.public_sleep_log = true
+            resource.public_profile = true
+            resource.role = Role.find_by_name('registered')
+            respond_to do |format|
+                if resource.save
+                  format.html { redirect_to @post }
+                  format.json { render json: {:location=> url_for(resource)} , status: 302 }
+                else
+                  format.html { render action: "new" }
+                  format.json { render json: {:errors => resource.errors}, status: 422 }
+                end
+              end
         end
     else
         super do
