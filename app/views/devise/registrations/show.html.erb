@@ -8,7 +8,7 @@
     <% if @user.avatar.exists? %>
         <%= image_tag current_user.avatar.url(:medium) %>
     <% else %>
-        <%= image_tag current_user.gravatar_url(default: identicon) %>
+        <%= image_tag current_user.gravatar_url(default: 'identicon') %>
     <% end %>
     
     <% if policy(@user).edit? %>
