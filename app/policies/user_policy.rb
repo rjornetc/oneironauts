@@ -11,7 +11,7 @@ class UserPolicy
   end
 
   def update?
-    @user == @record || @user.role.name == "admin"
+    @user == @record || current_user.role.name == "admin"
   end
 
   def edit?
