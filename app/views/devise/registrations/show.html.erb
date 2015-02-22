@@ -11,4 +11,7 @@
         <%= image_tag current_user.gravatar_url %>
     <% end %>
     
+    <% if policy(@user).edit? %>
+    <%= link_to 'Edit', edit_user_registration_path(@user) %>
+    <% end %>
 </div>

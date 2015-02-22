@@ -29,7 +29,7 @@ Rails.application.routes.draw do
           omniauth_callbacks: 'users/omniauth_callbacks'
   } 
   devise_scope :user do
-      get 'user/:id/show' => 'users/registrations#show'
+      get 'user/:id/profile' => 'users/registrations#show', as: 'user_profile'
     end
   
   resources :widgets
