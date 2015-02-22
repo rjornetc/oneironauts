@@ -11,6 +11,7 @@ gem 'pundit'
 gem 'impressionist'
 gem 'omniauth-twitter'
 gem 'gravtastic'
+gem 'negative_captcha'
 gem 'paperclip'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

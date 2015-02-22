@@ -5,17 +5,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
   include Pundit
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
+  before_filter :setup_negative_captcha, :only => [:new, :create]
 
   # POST /resource
   def create
     if session[:omniauth] == nil
-        super do
-            resource.points = 50
-            resource.bio = ''
-            resource.public_sleep_log = true
-            resource.public_profile = true
-            resource.role = Role.find_by_name('registered')
-            resource.save
+        if @captcha.valid? do
+            super do
+                resource.points = 50
+                resource.bio = ''
+                resource.public_sleep_log = true
+                resource.public_profile = true
+                resource.role = Role.find_by_name('registered')
+                resource.save
+            end
         end
     else
         super do
@@ -105,4 +108,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
       flash[:alert] = "This user's profile is private."
       redirect_to(request.referrer || root_path)
     end
+    
+    def setup_negative_captcha
+        @captcha = NegativeCaptcha.new(
+          # A secret key entered in environment.rb. 'rake secret' will give you a good one.
+          secret: NEGATIVE_CAPTCHA_SECRET,
+          spinner: request.remote_ip,
+          # Whatever fields are in your form
+          fields: [:name, :email, :body],
+          # If you wish to override the default CSS styles (position: absolute; left: -2000px;) used to position the fields off-screen
+          css: "display: none",
+          params: params
+        )
+      end
 end
