@@ -11,7 +11,7 @@ class UserPolicy
   end
 
   def update?
-    @user == @record || current_user.role.name == "admin"
+    @user == @record || (@user && @user.role.name == "admin")
   end
 
   def edit?
@@ -19,11 +19,11 @@ class UserPolicy
   end
 
   def destroy?
-    @user == @record || @user.role.name == "admin"
+    @user == @record || (@user && @user.role.name == "admin")
   end
   
   def cancel?
-    @user == @record || @user.role.name == "admin"
+    @user == @record || (@user && @user.role.name == "admin")
   end
 
 end
