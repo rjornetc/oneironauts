@@ -91,6 +91,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def delete_avatar
      @user = User.find(params[:id])
      @user.avatar = nil
+     @user.save
      redirect_to user_profile_path(@user) and return
   end  
     
