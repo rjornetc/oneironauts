@@ -5,20 +5,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   include Pundit
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
-  before_filter :setup_negative_captcha, :only => [:new, :create]
-
   # POST /resource
   def create
     if session[:omniauth] == nil
-        if(@captcha.valid?)
-            super do
-                resource.points = 50
-                resource.bio = ''
-                resource.public_sleep_log = true
-                resource.public_profile = true
-                resource.role = Role.find_by_name('registered')
-                resource.save
-            end
+        super do
+            resource.points = 50
+            resource.bio = ''
+            resource.public_sleep_log = true
+            resource.public_profile = true
+            resource.role = Role.find_by_name('registered')
+            resource.save
         end
     else
         super do
@@ -109,13 +105,4 @@ class Users::RegistrationsController < Devise::RegistrationsController
       redirect_to(request.referrer || root_path)
     end
     
-    def setup_negative_captcha
-        @captcha = NegativeCaptcha.new(
-          secret: '55d9d2b788cd036970bd0dc6e40f1d1d44ed0faebe66ad22b636f32153c16dc6731fd717433bc2ffa7bbf91f884f466d5804c007b999f87c6a3391413dcd77cb',
-          spinner: request.remote_ip,
-          fields: [:username, :email, :password],
-          css: "display: none",
-          params: params
-        )
-      end
 end
