@@ -44,7 +44,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # PUT /resource
   def update
     authorize @user
-    @user.avatar = params[:user][:avatar]
     redirect_to user_profile_path(@user)
   end
 
