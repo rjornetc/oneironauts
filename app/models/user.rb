@@ -43,7 +43,8 @@ class User < ActiveRecord::Base
       user.bio = ''
       user.public_sleep_log = true
       user.public_profile = true
-      user.avatar   = auth.info.image
+      file = File.open(auth.info.image)
+      @user.avatar   = file
       user.email    = auth.info.nickname+'@change.me'
       user.password = Devise.friendly_token[0,20]
       user.username = auth.nickname
@@ -59,7 +60,8 @@ class User < ActiveRecord::Base
           user.bio = ''
           user.public_sleep_log = true
           user.public_profile = true
-          user.avatar   = data['info']['image']
+          file = File.open(data['info']['image'])
+          @user.avatar   = file
           user.email    = data['info']['nickname']+'@change.me'
           user.password = Devise.friendly_token[0,20]
           user.username = data['info']['nickname']

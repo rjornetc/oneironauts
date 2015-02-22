@@ -12,7 +12,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         @user.bio = ''
         @user.public_sleep_log = true
         @user.public_profile = true
-        @user.avatar   = session["devise.twitter_data"]['info']['image']
+        file = File.open(session["devise.twitter_data"]['info']['image'])
+        @user.avatar   = file
         @user.email    = session["devise.twitter_data"]['info']['nickname']+'@change.me'
         @user.password = Devise.friendly_token[0,20]
         @user.username = session["devise.twitter_data"]['info']['nickname']
