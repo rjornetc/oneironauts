@@ -48,6 +48,7 @@ class User < ActiveRecord::Base
       user.password = Devise.friendly_token[0,20]
       user.username = auth.nickname
       user.role     ||= Role.find_by_name('registered')
+      user.confirmed_at = Time.now
       #user.image = auth.info.image # assuming the user model has an image
     end
   end
@@ -55,15 +56,10 @@ class User < ActiveRecord::Base
   def self.new_with_session(params, session)
       super.tap do |user|
         if data = session["devise.twitter_data"]
-          user.points = 50
-          user.bio = ''
-          user.public_sleep_log = true
-          user.public_profile = true
-          user.avatar   = URI.parse(data['info']['image'])
+          user.avatar   = data['info']['image']
           user.email    = data['info']['nickname']+'@change.me'
           user.password = Devise.friendly_token[0,20]
           user.username = data['info']['nickname']
-          user.role     = Role.find_by_name('registered')
         end
       end
     end
