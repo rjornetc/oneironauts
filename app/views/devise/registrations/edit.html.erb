@@ -11,6 +11,8 @@
         <%= image_tag @user.gravatar_url(default: 'identicon') %>
     <% end %><br />
     <%= f.file_field :avatar %><br />
+    
+    <%= link_to 'Delete avatar', delete_my_avatar(resource) %>
   </div>
   
   <div class="field">

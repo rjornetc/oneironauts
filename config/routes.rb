@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   } 
   devise_scope :user do
       get 'user/:id/profile' => 'users/registrations#show', as: 'user_profile'
+      get 'delete_my_avatar' => 'users/registrations#delete_avatar', as: 'delete_my_avatar'
     end
   
   resources :widgets

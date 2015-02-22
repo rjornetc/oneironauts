@@ -85,7 +85,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
           format.html # show.html.erb
           format.xml { render :xml => @user }
       end
-    end
+  end
+    
+  
+  def delete_avatar
+     @user.avatar.destroy
+     redirect_to user_profile_path(@user) and return
+  end  
+    
   
   protected
   
