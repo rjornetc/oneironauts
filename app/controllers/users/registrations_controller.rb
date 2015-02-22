@@ -10,7 +10,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     if session[:omniauth] == nil
-        if @captcha.valid? do
+        if(@captcha.valid?)
             super do
                 resource.points = 50
                 resource.bio = ''
