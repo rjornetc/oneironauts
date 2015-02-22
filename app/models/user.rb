@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
       user.bio = ''
       user.public_sleep_log = true
       user.public_profile = true
-      user.avatar   = URI.parse(auth.info.image)
+      user.avatar   = auth.info.image
       user.email    = auth.info.nickname+'@change.me'
       user.password = Devise.friendly_token[0,20]
       user.username = auth.nickname
