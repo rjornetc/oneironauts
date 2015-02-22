@@ -1,6 +1,6 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { :multipart => true }, remote: :true) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { :multipart => true }) do |f| %>
   <!--<%= devise_error_messages! %>-->
   <div id="error_messages"></div>
   <div class="field">
@@ -32,7 +32,7 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
-<script type="text/javascript" src="javascripts/remote_validation.js"></script>
+<%= javascript_include_tag 'remote_validations', 'data-turbolinks-track' => true %>
 <script>
     $( function() {
       $("form[data-remote='true']").remoteValidation();
