@@ -111,12 +111,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     
     def setup_negative_captcha
         @captcha = NegativeCaptcha.new(
-          # A secret key entered in environment.rb. 'rake secret' will give you a good one.
-          secret: 55d9d2b788cd036970bd0dc6e40f1d1d44ed0faebe66ad22b636f32153c16dc6731fd717433bc2ffa7bbf91f884f466d5804c007b999f87c6a3391413dcd77cb,
+          secret: '55d9d2b788cd036970bd0dc6e40f1d1d44ed0faebe66ad22b636f32153c16dc6731fd717433bc2ffa7bbf91f884f466d5804c007b999f87c6a3391413dcd77cb',
           spinner: request.remote_ip,
-          # Whatever fields are in your form
-          fields: [:name, :email, :body],
-          # If you wish to override the default CSS styles (position: absolute; left: -2000px;) used to position the fields off-screen
+          fields: [:username, :email, :password],
           css: "display: none",
           params: params
         )
