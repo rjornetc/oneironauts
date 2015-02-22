@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   include Gravtastic
   gravtastic
   
-  validates_attachment :avatar, :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"] }
+  validates_attachment :avatar, :content_type => ["image/jpeg", "image/gif", "image/png"]  
          
   belongs_to :role
   
