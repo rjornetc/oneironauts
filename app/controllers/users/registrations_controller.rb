@@ -15,15 +15,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
             resource.public_sleep_log = true
             resource.public_profile = true
             resource.role = Role.find_by_name('registered')
-            respond_to do |format|
-                if resource.save
-                  format.html { redirect_to @post }
-                  format.json { render json: {:location=> url_for(resource)} , status: 302 }
-                else
-                  format.html { render action: "new" }
-                  format.json { render json: {:errors => resource.errors}, status: 422 }
-                end
-              end
+            resource.save
         end
     else
         super do

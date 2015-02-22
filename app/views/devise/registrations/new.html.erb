@@ -1,38 +1,8 @@
 <h2>Sign up</h2>
-<script src="/remote_validation.js"></script>
-<script>
-$( function() {
-  $("form").remoteValidation({
-    beforeSend: function(xhr) { 
-      console.log("sending request",xhr) 
-    },
-    success: function(data, status, xhr) { 
-      console.log("received response", data, status, xhr) 
-    },
-    error: function(xhr, status, error) {
-      console.log("received error", xhr, status, error) 
-    },
-    complete: function(xhr, status) { 
-      console.log("complete ", xhr, status) 
-    },
-  });
-});
-</script>
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { :multipart => true }) do |f| %>
   <!--<%= devise_error_messages! %>-->
-  <div id="error_messages"> 
-      <% if resource.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(resource.errors.count, "error") %> prohibited this blog from being saved:</h2>
-  
-          <ul>
-          <% resource.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
-    </div>
+  <div id="error_messages"></div>
   <div class="field">
     <%= f.label :username %><br />
     <%= f.text_field :username, autofocus: true %>
