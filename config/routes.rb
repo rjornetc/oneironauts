@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :friendships  
+
   resources :logs
 
   resources :sleep_logs

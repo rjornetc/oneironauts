@@ -14,4 +14,27 @@
     <% if policy(@user).edit? %>
         <%= link_to 'Edit', edit_user_registration_path(@user) %>
     <% end %>
+    
+    <% if @user != current_user and !current_user.friends.include?(@user) %>
+        <%= link_to "Add Friend", friendships_path(:friend_id => @user), :method => :post %>
+    <% elsif  @user != current_user and current_user.friends.include?(@user)  %>
+        <%= link_to "Remove Friend", friendship_path(friend_id: @user), :method => :delete %>
+    <% end %>
+    
+    <h3>Friends</h3>
+    <% @user.friends.each do |friend| %>
+        <% if @user.inverse_friends.include?(friend) %>
+            <%= friend.username %>
+        <% end %>
+    <% end %>
+    
+    <h3>Followers</h3>
+    <% @user.inverse_friends.each do |friend| %>
+        <%= friend.username %>
+    <% end %>
+    
+    <h3>Following</h3>
+    <% @user.friends.each do |friend| %>
+        <%= friend.username %>
+    <% end %>
 </div>
