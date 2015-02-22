@@ -45,7 +45,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update
     authorize @user
     super
-    redirect_to user_profile_path(@user)
   end
 
   # DELETE /resource
@@ -94,6 +93,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   
   protected
+  
+  
+    def after_update_path_for(resource)
+        user_profile_path(resource)
+    end
     
     def update_resource(resource, params)
         resource.update_without_password(params)

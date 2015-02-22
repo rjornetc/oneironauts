@@ -6,7 +6,7 @@
   <div class="field">
     <%= f.label :avatar, class: 'col-sm-2 control-label'  %><br />
     <% if @user.avatar.exists? %>
-        <%= image_tag current_user.avatar.url %>
+        <%= image_tag current_user.avatar.url(:medium) %>
     <% else %>
         <%= image_tag current_user.gravatar_url %>
     <% end %><br />
