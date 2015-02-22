@@ -12,7 +12,7 @@
     <% end %><br />
     <%= f.file_field :avatar %><br />
     
-    <%= link_to 'Delete avatar', delete_my_avatar_path(resource) %>
+    <%= link_to 'Delete avatar', delete_my_avatar_path(@user) %>
   </div>
   
   <div class="field">
