@@ -88,9 +88,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
     
   
-  def delete_avatar
-     @user.avatar.destroy
-     redirect_to user_profile_path(@user) and return
+  def delete_avatar(user)
+     user.avatar = nil
+     redirect_to user_profile_path(user) and return
   end  
     
   
