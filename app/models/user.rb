@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   include Gravtastic
   gravtastic
   
-  attr_accessible :avatar
+  attr_accessor :avatar
   has_attached_file :avatar
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
