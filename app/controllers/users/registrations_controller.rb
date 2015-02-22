@@ -44,6 +44,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # PUT /resource
   def update
     authorize @user
+    super
     redirect_to user_profile_path(@user)
   end
 
