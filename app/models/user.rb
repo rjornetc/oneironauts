@@ -39,6 +39,10 @@ class User < ActiveRecord::Base
   
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.points = 50
+      user.bio = ''
+      user.public_sleep_log = true
+      user.public_profile = true
       user.avatar   = auth.info.image
       user.email    = auth.info.nickname+'@change.me'
       user.password = Devise.friendly_token[0,20]
@@ -56,7 +60,7 @@ class User < ActiveRecord::Base
           user.bio = ''
           user.public_sleep_log = true
           user.public_profile = true
-          user.avatar   = data['info']['image']
+          user.avatar   = URI.parse(data['info']['image'])
           user.email    = data['info']['nickname']+'@change.me'
           user.password = Devise.friendly_token[0,20]
           user.username = data['info']['nickname']
