@@ -39,15 +39,17 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :password_confirmation %> <br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+  <% if @user.provider.blank? || @user.provider.nil? %>
+      <div class="field">
+        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :password_confirmation %> <br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+  <% end %>
 
   <div class="actions">
     <%= f.submit "Update" %>
