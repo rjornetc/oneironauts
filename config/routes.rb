@@ -1,5 +1,75 @@
 Rails.application.routes.draw do
 
+  get 'post_categories/index'
+
+  get 'post_categories/new'
+
+  get 'post_categories/create'
+
+  get 'post_categories/edit'
+
+  get 'post_categories/update'
+
+  get 'post_categories/delete'
+
+  get 'post_categories/destroy'
+
+  get 'categories/index'
+
+  get 'categories/new'
+
+  get 'categories/create'
+
+  get 'categories/edit'
+
+  get 'categories/update'
+
+  get 'categories/delete'
+
+  get 'categories/destroy'
+
+  get 'comments/index'
+
+  get 'comments/new'
+
+  get 'comments/create'
+
+  get 'comments/edit'
+
+  get 'comments/update'
+
+  get 'comments/delete'
+
+  get 'comments/destroy'
+
+  get 'comments/vote_up'
+
+  get 'comments/vote_down'
+
+  get 'comments/mark_as_spam'
+
+  get 'posts/index'
+
+  get 'posts/new'
+
+  get 'posts/create'
+
+  get 'posts/edit'
+
+  get 'posts/update'
+
+  get 'posts/delete'
+
+  get 'posts/destroy'
+
+  get 'posts/vote_up'
+
+  get 'posts/vote_down'
+
+  resources :group_users
+  
+  resources :groups
+  
   resources :friendships  
 
   resources :logs

@@ -22,19 +22,17 @@
     <% end %>
     
     <h3>Friends</h3>
-    <% @user.friends.each do |friend| %>
-        <% if @user.inverse_friends.include?(friend) %>
-            <%= friend.username %>
-        <% end %>
+    <% @friends.each do |friend| %>
+        <%= friend.username %>
     <% end %>
     
     <h3>Followers</h3>
-    <% @user.inverse_friends.each do |friend| %>
+    <% @followers.each do |friend| %>
         <%= friend.username %>
     <% end %>
     
     <h3>Following</h3>
-    <% @user.friends.each do |friend| %>
+    <% @following.each do |friend| %>
         <%= friend.username %>
     <% end %>
 </div>

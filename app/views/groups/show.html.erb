@@ -1,0 +1,22 @@
+<h1><%= @group.name %></h1>
+<p><%= @group.description %></p>
+
+<h3>Add new Users (ALPHA => will be moved to a dialog)</h3>
+<% @possible_members = Array.new %>
+<% User.all.each do |u| %>
+    <% @possible_members << u if !@group.users.include?(u)  %>
+<% end %>
+<% @possible_members.each do |u|  #TODO show user's friends and a search box in a dialog #issue28 %>
+    <%= u.username %>
+    <% if policy(@group).add_member? && u != current_user %>
+        <%= link_to "Add member", group_users_path(group_id: @group.id, user_id: u.id), :method => :post %>
+    <% end %><br />
+<% end %>
+
+<h3>Users</h3>
+<% @group.users.each do |user| %>
+    <%= user.username %>
+    <% if policy(@group).remove_member? && user != current_user %>
+        <%= link_to "Remove member", group_user_path(group_id: @group.id, user_id: user.id), method: :delete %>
+    <% end %><br />
+<% end %>

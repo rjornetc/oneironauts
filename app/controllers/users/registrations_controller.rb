@@ -80,6 +80,28 @@ class Users::RegistrationsController < Devise::RegistrationsController
   
   def show
       @user = User.find(params[:id])
+      
+      @friends = Array.new
+      @user.friends.each do |friend|
+          if @user.inverse_friends.include?(friend)
+              @friends << friend
+          end 
+      end 
+      
+      @followers = Array.new
+      @user.inverse_friends.each do |friend|
+          if !@user.friends.include?(friend)
+              @followers << friend
+          end 
+      end 
+      
+      @following = Array.new
+      @user.friends.each do |friend|
+          if !@user.inverse_friends.include?(friend)
+              @following << friend
+          end 
+      end 
+      
       authorize @user
       respond_to do |format|
           format.html # show.html.erb
