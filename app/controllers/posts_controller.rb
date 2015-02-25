@@ -9,6 +9,15 @@ class PostsController < ApplicationController
 
   def create
       @post = Post.new(post_params)
+      @post.user = current_user
+      authorize @post 
+      if @post.save  
+        flash[:notice] = "Post published."  
+        redirect_to post_path(@post)
+      else  
+        flash[:notice] = "Unable to publish that post."  
+        redirect_to post_path(@post)
+      end 
   end
 
   def edit
@@ -17,6 +26,7 @@ class PostsController < ApplicationController
 
   def update
       @post = Post.find(params[:id])
+      @post.user = current_user
   end
 
   def delete
