@@ -3,7 +3,7 @@ class GroupUsersController < ApplicationController
     def create  
       @group = Group.find(params[:group_id])
       @member = @group.group_users.build(:user_id => params[:user_id]) 
-      @member.manager?=true
+      @member.manager=true
       authorize @member 
       if @member.save  
         flash[:notice] = "Added member."  
