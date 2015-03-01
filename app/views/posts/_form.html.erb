@@ -1,0 +1,30 @@
+<%= form_for @post do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <div class="new_form ">
+	 <div class="field">
+	   <%= f.label :title %><br>
+	   <%= f.text_field :title, class: 'form-control' %>
+	 </div>
+	 <div class="field" data-no-turbolink>
+	    <%= f.label :content %><br>
+	    <%= f.text_area :content, id:"content", :ckeditor => {:language => 'es'} %>
+	    <br />
+	 </div>
+	  
+	 <div class="actions">
+	    <button class="submit" type="submit" value="Submit">Create Post</button>
+	  </div>
+  </div>
+  <% end %>
+
+

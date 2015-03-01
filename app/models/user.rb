@@ -11,6 +11,12 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
+  has_many :posts
+
+  has_many :voters, as: :votable
+  has_many :posts, through: :voters, :source => :votable, :source_type => 'Post'
+  has_many :comments, through: :voters, :source => :votable, :source_type => 'Comment'
+
   has_many :group_users
   has_many :groups, through: :group_users
 

@@ -1,0 +1,9 @@
+<h1><%= @post.title %> | <%= @post.votes %></h1>
+<p><%= @post.content %></p>
+<p><%= @post.user.username %></p>
+<% if current_user && !@post.voters.find_by_user_id(current_user.id) && @post.user != current_user %>
+<%= link_to 'Vote up', voters_path(votable_id: @post.id, votable_type: 'Post', user_id: current_user.id, positive: true), :method => :post %>
+<%= link_to 'Vote down', voters_path(votable_id: @post.id, votable_type: 'Post', user_id: current_user.id, positive: false), :method => :post %>
+<% elsif @post.voters.find_by_user_id(current_user.id) %>
+<%= link_to 'Delete my vote', voter_path(votable_id: @post.id, votable_type: 'Post', user_id: current_user.id), :method => :delete %>
+<% end %>

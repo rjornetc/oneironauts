@@ -2,18 +2,33 @@ class PostPolicy
   attr_reader :user, :record
 
   def initialize(user, record)
-    @user = user
-    @record = record
+      @user = user
+      @record = record
   end
 
   def create?
-    @record.user != @user
+      @user && @user.role.name == "admin"
+  end
+  
+  def new?
+      @user && @user.role.name == "admin"
+  end
+  
+  def edit?
+      @user && @record.user == @user && @user.role.name == "admin"
+  end
+  
+  def update?
+      @user && @record.user == @user && @user.role.name == "admin"
+  end
+
+  def delete?
+      @user && @record.user == @user && @user.role.name == "admin"
   end
 
   def destroy?
-    @record.user != @user
+      @user && @record.user == @user && @user.role.name == "admin"
   end
-
 
 end
 

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :voters
+
   resources :post_categories
 
   resources :categories
