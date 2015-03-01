@@ -11,6 +11,7 @@ class PostsController < ApplicationController
       @post = Post.new
       authorize @post
   end
+  
 
   def create
       @post = Post.new(post_params)
@@ -32,9 +33,10 @@ class PostsController < ApplicationController
 
   def update
       @post = Post.find(params[:id])
+      authorize @post
       @post.user = current_user
       @post.update(post_params)
-      authorize @post
+      redirect_to post_path(@post)
   end
 
   def delete
@@ -44,6 +46,7 @@ class PostsController < ApplicationController
   
   def show
       @post = Post.find(params[:id])
+      authorize @post
   end
 
   def destroy
@@ -54,7 +57,7 @@ class PostsController < ApplicationController
   
   private
       def post_params
-          params.require(:post).permit(:title, :content, :votes, :user_id)
+          params.require(:post).permit(:title, :content, :votes, :user_id, :draft, :post_categories, :categories)
       end
       
       def post_not_authorized

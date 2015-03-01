@@ -1,0 +1,20 @@
+<% if comment.user.avatar.exists? %>
+    <%= image_tag comment.user.avatar.url(:medium) %>
+<% else %>
+    <%= image_tag comment.user.gravatar_url(default: 'identicon') %>
+<% end %>
+<%= link_to comment.user.username, user_profile_path(comment.user) %><br />
+<%= comment.content %><br />
+<small><%= time_ago_in_words(comment.created_at) %> ago | <span class="badge"><%= comment.votes %> <i class="fa fa-heart-o"></i></span></small>
+
+<% if current_user && !comment.voters.find_by_user_id(current_user.id) && comment.user != current_user %>
+<%= link_to voters_path(post_id: @post.id, votable_id: comment.id, votable_type: 'Comment', user_id: current_user.id, positive: true), :method => :post, class:'btn btn-primary' do %>Vote up <i class="fa fa-thumbs-o-up"></i><% end %>
+<%= link_to voters_path(post_id: @post.id, votable_id: comment.id, votable_type: 'Comment', user_id: current_user.id, positive: false), :method => :post, class:'btn btn-primary' do %>Vote down <i class="fa fa-thumbs-o-down"></i><% end %>
+<% elsif current_user && comment.voters.find_by_user_id(current_user.id) %>
+<%= link_to voter_path(post_id: @post.id, votable_id: comment.id, votable_type: 'Comment', user_id: current_user.id), :method => :delete, class:'btn btn-danger' do %>Delete my vote <i class="fa fa-minus-circle"></i><% end %>
+<% end %>
+
+<% if current_user %>
+    <%= link_to new_comment_path(commentable_type: "Comment", commentable_id: comment.id), class:'btn btn-success' do %>Reply <i class="fa fa-reply"></i><% end %>
+<% end %><br /><hr />
+<div class="nested" style="padding-left: 2em;"><%= render comment.comments %></div>

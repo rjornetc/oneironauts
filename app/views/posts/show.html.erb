@@ -1,25 +1,28 @@
 <h1><%= @post.title %> | <%= @post.votes %> <i class="fa fa-heart-o"></i></h1>
 <p><%= @post.content %></p>
-<p><%= link_to @post.user.username, user_profile_path(@post.user) %></p>
+<% if @post.user.avatar.exists? %>
+    <%= image_tag @post.user.avatar.url(:medium) %>
+<% else %>
+    <%= image_tag @post.user.gravatar_url(default: 'identicon') %>
+<% end %>
+<%= link_to @post.user.username, user_profile_path(@post.user) %><br />
+
 <% if current_user && !@post.voters.find_by_user_id(current_user.id) && @post.user != current_user %>
-<%= link_to voters_path(votable_id: @post.id, votable_type: 'Post', user_id: current_user.id, positive: true), :method => :post do %>Vote up <i class="fa fa-thumbs-o-up"></i><% end %>
-<%= link_to voters_path(votable_id: @post.id, votable_type: 'Post', user_id: current_user.id, positive: false), :method => :post do %>Vote down <i class="fa fa-thumbs-o-down"></i><% end %>
-<% elsif @post.voters.find_by_user_id(current_user.id) %>
-<%= link_to voter_path(votable_id: @post.id, votable_type: 'Post', user_id: current_user.id), :method => :delete do %>Delete my vote <i class="fa fa-minus-circle"></i><% end %>
+<%= link_to voters_path(votable_id: @post.id, votable_type: 'Post', user_id: current_user.id, positive: true), :method => :post, class:'btn btn-primary' do %>Vote up <i class="fa fa-thumbs-o-up"></i><% end %>
+<%= link_to voters_path(votable_id: @post.id, votable_type: 'Post', user_id: current_user.id, positive: false), :method => :post, class:'btn btn-primary' do %>Vote down <i class="fa fa-thumbs-o-down"></i><% end %>
+<% elsif current_user && @post.voters.find_by_user_id(current_user.id) %>
+<%= link_to voter_path(votable_id: @post.id, votable_type: 'Post', user_id: current_user.id), :method => :delete, class:'btn btn-danger' do %>Delete my vote <i class="fa fa-minus-circle"></i><% end %>
 <% end %>
 <hr />
 <h2><i class="fa fa-comments-o"></i> Comments</h2>
 <% if @post.comments.any? %>
-    <%= render 'comment_form' %>
+    <%= render 'comment_form' if current_user %>
     <hr />
     <% @post.comments.each do |comment| %>
-        <%= link_to comment.user.username, user_profile_path(comment.user) %><br />
-        <%= comment.content %><br />
-        <small><%= time_ago_in_words(comment.created_at) %> ago</small>
-        <hr />
+        <%= render comment %>
     <% end %>
 <% else %>
     <h3>It looks like nobody has commented this post, why don't you share your thoughts?</h3>
-    <%= render 'comment_form' %>
+    <%= render 'comment_form' if current_user %>
     <hr />
 <% end %>

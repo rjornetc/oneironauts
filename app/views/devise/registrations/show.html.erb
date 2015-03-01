@@ -5,19 +5,15 @@
     <%= @user.points %>
     <%= @user.bio %>
     
-    <% if @user.avatar.exists? %>
-        <%= image_tag @user.avatar.url(:medium) %>
-    <% else %>
-        <%= image_tag @user.gravatar_url(default: 'identicon') %>
-    <% end %>
+    <%= render 'devise/shared/user_avatar' %>
     
     <% if policy(@user).edit? %>
         <%= link_to 'Edit', edit_user_registration_path(@user) %>
     <% end %>
     
-    <% if @user != current_user and !current_user.friends.include?(@user) %>
+    <% if current_user && @user != current_user and !current_user.friends.include?(@user) %>
         <%= link_to "Add Friend", friendships_path(:friend_id => @user), :method => :post %>
-    <% elsif  @user != current_user and current_user.friends.include?(@user)  %>
+    <% elsif  current_user && @user != current_user and current_user.friends.include?(@user)  %>
         <%= link_to "Remove Friend", friendship_path(friend_id: @user), :method => :delete %>
     <% end %>
     

@@ -57,7 +57,7 @@ class VotersController < ApplicationController
           if params[:votable_type] == 'Post'
               @votable = Post.find(params[:votable_id])
           elsif params[:votable_type] == 'Comment'
-              @votable = Comment.find(params[:votable_id])
+              @votable = Post.find(params[:post_id]).comments.find(params[:votable_id])
           end
           puts @votable
       end

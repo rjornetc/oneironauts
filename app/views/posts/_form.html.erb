@@ -15,16 +15,28 @@
 	   <%= f.label :title %><br>
 	   <%= f.text_field :title, class: 'form-control' %>
 	 </div>
+	 <div class="field">
+	   <%= f.label :categories, "Categories" %><br>
+	   <%= f.collection_select(:categories, Category.all, :id, :name, {:selected => @post.categories, :include_blank => true}, {multiple: true, id: 'categories', class: 'form-control' }) %>
+	   
+	 </div>
+	 <div class="field">
+	   <%= f.label :draft %><br>
+	   <%= f.check_box :draft, class: 'form-control' %>
+	 </div>
 	 <div class="field" data-no-turbolink>
 	    <%= f.label :content %><br>
-	    <%= f.text_area :content, id:"content" %>
+	    <%= f.text_area :content, class: 'form-control' %>
 	    <br />
 	 </div>
 	  
 	 <div class="actions">
-	    <button class="submit" type="submit" value="Submit">Create Post</button>
+	    <button class="submit" type="submit" value="Submit" class="btn btn-primary">Save Post</button>
 	  </div>
   </div>
   <% end %>
+  <script type="text/javascript">
+    $('#categories').select2();
+  </script>
 
 

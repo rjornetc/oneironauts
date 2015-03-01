@@ -6,6 +6,7 @@ gem 'rails', '4.2.0'
 gem 'pg'
 gem 'rails_12factor', group: :production
 gem 'devise'
+gem 'select2-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'pundit'

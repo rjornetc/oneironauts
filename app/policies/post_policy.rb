@@ -6,6 +6,10 @@ class PostPolicy
       @record = record
   end
 
+  def show?
+      !@record.draft || @user.role.name == "admin"
+  end
+
   def create?
       @user && @user.role.name == "admin"
   end
