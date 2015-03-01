@@ -7,6 +7,7 @@ gem 'pg'
 gem 'rails_12factor', group: :production
 gem 'devise'
 gem 'bootstrap-sass'
+gem 'font-awesome-sass'
 gem 'pundit'
 gem 'impressionist'
 gem 'omniauth-twitter'

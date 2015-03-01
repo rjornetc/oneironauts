@@ -1,9 +1,25 @@
-<h1><%= @post.title %> | <%= @post.votes %></h1>
+<h1><%= @post.title %> | <%= @post.votes %> <i class="fa fa-heart-o"></i></h1>
 <p><%= @post.content %></p>
-<p><%= @post.user.username %></p>
+<p><%= link_to @post.user.username, user_profile_path(@post.user) %></p>
 <% if current_user && !@post.voters.find_by_user_id(current_user.id) && @post.user != current_user %>
-<%= link_to 'Vote up', voters_path(votable_id: @post.id, votable_type: 'Post', user_id: current_user.id, positive: true), :method => :post %>
-<%= link_to 'Vote down', voters_path(votable_id: @post.id, votable_type: 'Post', user_id: current_user.id, positive: false), :method => :post %>
+<%= link_to voters_path(votable_id: @post.id, votable_type: 'Post', user_id: current_user.id, positive: true), :method => :post do %>Vote up <i class="fa fa-thumbs-o-up"></i><% end %>
+<%= link_to voters_path(votable_id: @post.id, votable_type: 'Post', user_id: current_user.id, positive: false), :method => :post do %>Vote down <i class="fa fa-thumbs-o-down"></i><% end %>
 <% elsif @post.voters.find_by_user_id(current_user.id) %>
-<%= link_to 'Delete my vote', voter_path(votable_id: @post.id, votable_type: 'Post', user_id: current_user.id), :method => :delete %>
+<%= link_to voter_path(votable_id: @post.id, votable_type: 'Post', user_id: current_user.id), :method => :delete do %>Delete my vote <i class="fa fa-minus-circle"></i><% end %>
+<% end %>
+<hr />
+<h2><i class="fa fa-comments-o"></i> Comments</h2>
+<% if @post.comments.any? %>
+    <%= render 'comment_form' %>
+    <hr />
+    <% @post.comments.each do |comment| %>
+        <%= link_to comment.user.username, user_profile_path(comment.user) %><br />
+        <%= comment.content %><br />
+        <small><%= time_ago_in_words(comment.created_at) %> ago</small>
+        <hr />
+    <% end %>
+<% else %>
+    <h3>It looks like nobody has commented this post, why don't you share your thoughts?</h3>
+    <%= render 'comment_form' %>
+    <hr />
 <% end %>
