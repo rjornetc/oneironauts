@@ -16,9 +16,8 @@
 	   <%= f.text_field :title, class: 'form-control' %>
 	 </div>
 	 <div class="field">
-	   <%= f.label :categories, "Categories" %><br>
-	   <%= f.collection_select(:categories, Category.all, :id, :name, {:selected => @post.categories, :include_blank => true}, {multiple: true, id: 'categories', class: 'form-control' }) %>
-	   
+	   <%= f.label :category, "Categories" %><br>
+	   <%= f.collection_select(:category_id, Category.all, :id, :name, {:selected => @post.category_id, :include_blank => true}, {id: 'categories', class: 'form-control' }) %>
 	 </div>
 	 <div class="field">
 	   <%= f.label :draft %><br>

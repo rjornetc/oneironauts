@@ -57,7 +57,7 @@ class PostsController < ApplicationController
   
   private
       def post_params
-          params.require(:post).permit(:title, :content, :votes, :user_id, :draft, :post_categories, :categories)
+          params.require(:post).permit(:title, :content, :votes, :user_id, :draft, :category_id)
       end
       
       def post_not_authorized

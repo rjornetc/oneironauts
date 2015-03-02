@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20150301200414) do
   create_table "group_users", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "group_id"
-    t.boolean  "manager?"
+    t.boolean  "manager"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -119,20 +119,14 @@ ActiveRecord::Schema.define(version: 20150301200414) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "post_categories", force: :cascade do |t|
-    t.integer  "post_id"
-    t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
     t.integer  "user_id"
-    t.integer  "votes",      default: 0
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "votes",       default: 0
+    t.integer  "category_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.boolean  "draft"
   end
 
