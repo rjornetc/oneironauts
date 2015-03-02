@@ -2,6 +2,16 @@
   <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="/">Oneironauts</a>
+      <nav class="nav navbar-nav">
+          <li><a href="/">Home</a></li>
+          <li><%= link_to "Blog", posts_path %></li>
+          <% if current_user %>
+              <li><%= link_to "Me", user_profile_path(current_user) %></li>
+          <% else %>
+              <li><%= link_to "Log In", new_user_session_path %></li>
+              <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <% end %>
+      </nav>
     </div>
   </div>
 </nav>

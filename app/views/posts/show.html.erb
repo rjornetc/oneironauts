@@ -1,4 +1,7 @@
 <h1><%= @post.title %> | <%= @post.votes %> <i class="fa fa-heart-o"></i></h1>
+<% if policy(@post).edit? %>
+    <%= link_to edit_post_path(@post), class: 'btn btn-warning', style:"float: right;" do %><i class="fa fa-pencil"></i> Edit<% end %>
+<% end %>
 <h3>in <%= @post.category.name %></h3>
 <p><%= @post.content %></p>
 <% if @post.user.avatar.exists? %>

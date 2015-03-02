@@ -11,19 +11,19 @@ class CommentPolicy
   end
 
   def destroy?
-      @record.user != @user
+      @record.user == @user
   end
   
   def edit?
-      @record.user != @user
+      @record.user == @user
   end
   
   def update?
-      @record.user != @user
+      @record.user == @user
   end
   
   def delete?
-      @record.user != @user
+      @record.user == @user
   end
   
   def new?

@@ -16,5 +16,8 @@
 
 <% if current_user %>
     <%= link_to new_comment_path(commentable_type: "Comment", commentable_id: comment.id), class:'btn btn-success' do %>Reply <i class="fa fa-reply"></i><% end %>
+    <% if policy(comment).edit? %>
+        <%= link_to edit_comment_path(comment), class: 'btn btn-warning' do %><i class="fa fa-pencil"></i> Edit<% end %>
+    <% end %>
 <% end %><br /><hr />
 <div class="nested" style="padding-left: 2em;"><%= render comment.comments %></div>

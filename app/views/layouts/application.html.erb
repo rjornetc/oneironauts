@@ -16,12 +16,7 @@
         <% if alert %>
           <p class="alert alert-danger"><%= alert %></p>
         <% end %>
-        <div class="col-xs-3">
-            <%= render 'shared/left_sidebar_default' %>
-        </div>
-        <div class="col-xs-9">
           <%= yield %>
-        </div>
       </div>
     </div>
 
