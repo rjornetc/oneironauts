@@ -9,7 +9,7 @@ class GroupsController < ApplicationController
 
   def create
      @group  = Group.new(group_params)
-     @creator = @group.group_users.build(:user_id => current_user.id, :manager? => true) 
+     @creator = @group.group_users.build(:user_id => current_user.id, :manager => true) 
      authorize @creator 
      
      if @group.save
