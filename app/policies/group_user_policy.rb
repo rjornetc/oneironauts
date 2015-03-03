@@ -7,11 +7,11 @@ class GroupUserPolicy
   end
 
   def create?
-    @record.user != @user
+    @user && @record.group.users.find_by_username(@user.username).manager
   end
 
   def destroy?
-    @record.user != @user
+    @user && @record.group.users.find_by_username(@user.username).manager
   end
 
 

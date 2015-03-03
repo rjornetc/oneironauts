@@ -2,15 +2,15 @@
 <%= form_for(@group) do |f| %>
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
+    <%= f.text_field :name, autofocus: true, class:'form-control' %>
   </div>
   
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_field :description %>
+    <%= f.text_area :description, class:'form-control' %>
   </div>
     
   <div class="actions">
-    <%= f.submit "Create group" %>
+    <%= f.submit "Create group", class:'btn btn-primary' %>
   </div>
 <% end %>
