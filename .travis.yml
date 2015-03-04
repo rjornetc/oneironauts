@@ -1,13 +1,15 @@
 addons:
   postgresql: "9.3"
   
+rvm:
+1.9.3
+
+env:
+– DB=sqlite
+– DB=postgresql
+
 before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
-  - psql -U postgres -c "create extension postgis"
-  - bundle exec rake db:migrate
-  
-before_install:
-  - sudo apt-get update
-  - sudo apt-get install language-pack-es
-  - sudo /etc/init.d/postgresql stop
-  - sudo /etc/init.d/postgresql start 9.3
+– psql -c ‘create database webcalendar_test;’ -U postgres
+
+script:
+– RAILS_ENV=test bundle exec rake –trace db:migrate spec
