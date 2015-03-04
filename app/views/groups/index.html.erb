@@ -1,7 +1,7 @@
 <h1>Groups</h1>
 
 <% Group.all.each do |g| %>
-    <h3><%= g.name %></h3>
-    <p><%= g.users.count %> members</p>
+    <h3><%= link_to g.name, g %></h3>
+    <p><%= g.users.count %> member(s)</p>
     <hr />
 <% end %>
