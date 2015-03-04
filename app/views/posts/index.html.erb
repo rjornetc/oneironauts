@@ -1,15 +1,17 @@
 <h1>Blog</h1>
 <% Post.all.order(created_at: :desc).each do |post| %>
         <% if !post.draft %>
-            <h3><%= link_to post.title, post_path(post) %></h3>
-            <small><%= post.votes %> <i class="fa fa-heart-o"></i> | <%= time_ago_in_words(post.created_at) %> ago</small><br />
-            <% if post.user.avatar.exists? %>
-                <%= image_tag post.user.avatar.url(:medium), class: 'avatar' %>
+            <h3><i class="fa fa-pencil"></i> <%= link_to post.title, post_path(post) %></h3>
+            <small><% if post.user.avatar.exists? %>
+                <%= image_tag post.user.avatar.url(:medium), class: 'little-avatar' %>
             <% else %>
-                <%= image_tag post.user.gravatar_url(default: 'identicon'), class: 'avatar' %>
+                <%= image_tag post.user.gravatar_url(default: 'identicon'), class: 'little-avatar' %>
             <% end %>
-            <%= link_to post.user.username, user_profile_path(post.user) %><br />
+            <%= link_to post.user.username, user_profile_path(post.user) %> 
+            </small><br /><br />
             <p><%= truncate(CGI::unescapeHTML(post.content.html_safe.gsub(/<\/?[^>]*>/," ")), :omission => "...", :length => 512) %></p>
+            <p><i class="fa fa-comments-o"></i> <%= post.comments.count %> comments | <%= post.votes %> <i class="fa fa-heart-o"></i> | <%= time_ago_in_words(post.created_at) %> ago
+            </p>
             <hr />
         <% end %>
 <% end %>

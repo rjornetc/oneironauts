@@ -38,6 +38,31 @@ class GroupsController < ApplicationController
   
   def show
       @group = Group.find(params[:id])
+      
+      #friends
+      @friends = Array.new
+      current_user.friends.each do |friend|
+          if current_user.inverse_friends.include?(friend) && !@group.users.include?(friend)
+              @friends << friend
+          end 
+      end 
+      
+      #followers
+      @followers = Array.new
+      current_user.inverse_friends.each do |friend|
+          if !current_user.friends.include?(friend) && !@group.users.include?(friend)
+              @followers << friend
+          end 
+      end 
+      
+      #following
+      @following = Array.new
+      current_user.friends.each do |friend|
+          if !current_user.inverse_friends.include?(friend) && !@group.users.include?(friend)
+              @following << friend
+          end 
+      end 
+      
   end
   
   private

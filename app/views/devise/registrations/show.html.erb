@@ -1,4 +1,4 @@
-<h2><%= @user.username.upcase %>'S  PROFILE</h2>
+<h2><%= @user.username %>'s profile page</h2>
 
 <div class="profile">
     <%= @user.username %>
@@ -16,19 +16,24 @@
     <% elsif  current_user && @user != current_user and current_user.friends.include?(@user)  %>
         <%= link_to "Remove Friend", friendship_path(friend_id: @user), :method => :delete %>
     <% end %>
-    
-    <h3>Friends</h3>
-    <% @friends.each do |friend| %>
-        <%= friend.username %>
-    <% end %>
-    
-    <h3>Followers</h3>
-    <% @followers.each do |friend| %>
-        <%= friend.username %>
-    <% end %>
-    
-    <h3>Following</h3>
-    <% @following.each do |friend| %>
-        <%= friend.username %>
-    <% end %>
+    <div class="row">
+        <div class="col-xs-4">
+            <h3 style="text-align: center;">Friends</h3>
+            <% @friends.each do |friend| %>
+                <%= friend.username %>
+            <% end %>
+        </div>
+        <div class="col-xs-4">
+            <h3 style="text-align: center;">Followers</h3>
+            <% @followers.each do |friend| %>
+                <%= friend.username %>
+            <% end %>
+        </div>
+        <div class="col-xs-4">
+            <h3 style="text-align: center;">Following</h3>
+            <% @following.each do |friend| %>
+                <%= friend.username %>
+            <% end %>
+        </div>
+    </div>
 </div>

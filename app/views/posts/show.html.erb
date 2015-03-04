@@ -1,16 +1,20 @@
-<h1><%= @post.title %> | <%= @post.votes %> <i class="fa fa-heart-o"></i></h1>
+<h1><i class="fa fa-pencil"></i> <%= @post.title %> | <%= @post.votes %> <i class="fa fa-heart-o"></i></h1>
 <% if policy(@post).edit? %>
     <%= link_to edit_post_path(@post), class: 'btn btn-warning', style:"float: right;" do %><i class="fa fa-pencil"></i> Edit<% end %>
 <% end %>
 <h3>in <%= @post.category.name %></h3>
+<small>
+    <% if @post.user.avatar.exists? %>
+        <%= image_tag @post.user.avatar.url(:medium), class: 'little-avatar' %>
+    <% else %>
+        <%= image_tag @post.user.gravatar_url(default: 'identicon'), class: 'little-avatar' %>
+    <% end %>
+    <%= link_to @post.user.username, user_profile_path(@post.user) %><br />
+</small>
 <p><%= @post.content %></p>
-<% if @post.user.avatar.exists? %>
-    <%= image_tag @post.user.avatar.url(:medium), class: 'avatar' %>
-<% else %>
-    <%= image_tag @post.user.gravatar_url(default: 'identicon'), class: 'avatar' %>
-<% end %>
-<%= link_to @post.user.username, user_profile_path(@post.user) %><br />
 
+<p><i class="fa fa-comments-o"></i> <%= @post.comments.count %> comments | <%= @post.votes %> <i class="fa fa-heart-o"></i> | <%= time_ago_in_words(@post.created_at) %> ago
+</p>
 <% if current_user && !@post.voters.find_by_user_id(current_user.id) && @post.user != current_user %>
 <%= link_to voters_path(votable_id: @post.id, votable_type: 'Post', user_id: current_user.id, positive: true), :method => :post, class:'btn btn-primary' do %>Vote up <i class="fa fa-thumbs-o-up"></i><% end %>
 <%= link_to voters_path(votable_id: @post.id, votable_type: 'Post', user_id: current_user.id, positive: false), :method => :post, class:'btn btn-primary' do %>Vote down <i class="fa fa-thumbs-o-down"></i><% end %>
@@ -18,7 +22,7 @@
 <%= link_to voter_path(votable_id: @post.id, votable_type: 'Post', user_id: current_user.id), :method => :delete, class:'btn btn-danger' do %>Delete my vote <i class="fa fa-minus-circle"></i><% end %>
 <% end %>
 <hr />
-<h2><i class="fa fa-comments-o"></i> Comments</h2>
+<h2><i class="fa fa-comments-o"></i> Meanings</h2>
 <% if @post.comments.any? %>
     <%= render 'comment_form' if current_user %>
     <hr />

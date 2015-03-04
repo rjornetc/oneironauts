@@ -1,0 +1,20 @@
+<h1><%= @dream_sign.name %></h1>
+<% if @dream_sign.user.avatar.exists? %>
+    <%= image_tag @dream_sign.user.avatar.url(:medium), class: 'avatar' %>
+<% else %>
+    <%= image_tag @dream_sign.user.gravatar_url(default: 'identicon'), class: 'avatar' %>
+<% end %>
+<%= @dream_sign.user.username %>
+<hr />
+<h2><i class="fa fa-tags"></i> Meanings</h2>
+<% if @dream_sign.meanings.any? %>
+    <%= render 'meaning_form' if current_user %>
+    <hr />
+    <% @dream_sign.meanings.each do |meaning| %>
+        <%= render meaning %>
+    <% end %>
+<% else %>
+    <h3>It looks like nobody has written here, why don't you share your thoughts?</h3>
+    <%= render 'meaning_form' if current_user %>
+    <hr />
+<% end %>

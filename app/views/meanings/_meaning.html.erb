@@ -1,0 +1,22 @@
+<% if meaning.user.avatar.exists? %>
+    <%= image_tag meaning.user.avatar.url(:medium), class:'avatar' %>
+<% else %>
+    <%= image_tag meaning.user.gravatar_url(default: 'identicon'), class:'avatar' %>
+<% end %>
+<%= link_to meaning.user.username, user_profile_path(meaning.user) %><br />
+<%= meaning.description %><br />
+<small><%= time_ago_in_words(meaning.created_at) %> ago | <span class="badge"><%= meaning.votes %> <i class="fa fa-heart-o"></i></span></small>
+
+<% if current_user && !meaning.voters.find_by_user_id(current_user.id) && meaning.user != current_user %>
+<%= link_to voters_path(post_id: @post.id, votable_id: meaning.id, votable_type: 'meaning', user_id: current_user.id, positive: true), :method => :post, class:'btn btn-primary' do %>Vote up <i class="fa fa-thumbs-o-up"></i><% end %>
+<%= link_to voters_path(post_id: @post.id, votable_id: meaning.id, votable_type: 'meaning', user_id: current_user.id, positive: false), :method => :post, class:'btn btn-primary' do %>Vote down <i class="fa fa-thumbs-o-down"></i><% end %>
+<% elsif current_user && meaning.voters.find_by_user_id(current_user.id) %>
+<%= link_to voter_path(post_id: @post.id, votable_id: meaning.id, votable_type: 'meaning', user_id: current_user.id), :method => :delete, class:'btn btn-danger' do %>Delete my vote <i class="fa fa-minus-circle"></i><% end %>
+<% end %>
+
+<% if current_user %>
+    <%= link_to new_meaning_path(meaningable_type: "meaning", meaningable_id: meaning.id), class:'btn btn-success' do %>Reply <i class="fa fa-reply"></i><% end %>
+    <% if policy(meaning).edit? %>
+        <%= link_to edit_meaning_path(meaning), class: 'btn btn-warning' do %><i class="fa fa-pencil"></i> Edit<% end %>
+    <% end %>
+<% end %><br /><hr />

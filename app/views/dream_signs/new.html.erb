@@ -1,2 +1,5 @@
-<h1>DreamSigns#new</h1>
-<p>Find me in app/views/dream_signs/new.html.erb</p>
+<h1>Ask for a Dream Sing</h1>
+<%= form_for @dream_sign do |f| %>
+    <%= f.text_field :name, class:'form-control' %>
+    <%= f.submit "Submit", class:'btn btn-primary' %>
+<% end %>

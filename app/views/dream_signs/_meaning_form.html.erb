@@ -1,0 +1,25 @@
+<%= form_for Meaning.new do |f| %>
+  <% if Meaning.new.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(Meaning.new.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+      <% Meaning.new.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <div class="new_form ">
+	 <div class="field" data-no-turbolink>
+	    <%= f.label :description %><br>
+	    <%= f.text_area :description, class: 'form-control' %>
+	    <%= hidden_field_tag(:dream_sign_id, @dream_sign.id) %>
+	    <br />
+	 </div>
+	  
+	 <div class="actions">
+	    <%= f.submit "Submit", class:'btn btn-primary' %>
+	  </div>
+  </div>
+  <% end %>
