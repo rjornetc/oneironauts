@@ -7,8 +7,11 @@ default: &default
 
 development:
   <<: *default
+  adapter: postgresql
   database: oneironauts
-
+  username: postgres
+  password: <%= ENV['YOUR_DATABASE_PASSWORD'] %>
+  
 test:
   adapter: postgresql
   username: postgres

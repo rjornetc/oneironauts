@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
 
+  get 'board_messages/index'
+
+  get 'board_messages/create'
+
+  get 'board_messages/update'
+
+  get 'board_messages/new'
+
+  get 'board_messages/edit'
+
+  get 'board_messages/delete'
+
+  get 'board_messages/destroy'
+
+  get 'board_messages/show'
+
   resources :voters
 
   resources :post_categories
