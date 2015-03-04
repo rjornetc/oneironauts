@@ -6,33 +6,33 @@
   <div class="field">
     <%= f.label :avatar, class: 'col-sm-2 control-label'  %><br />
     <% if @user.avatar.exists? %>
-        <%= image_tag @user.avatar.url(:medium) %>
+        <%= image_tag @user.avatar.url(:medium), class: 'avatar' %>
     <% else %>
-        <%= image_tag @user.gravatar_url(default: 'identicon') %>
+        <%= image_tag @user.gravatar_url(default: 'identicon'), class: 'avatar' %>
     <% end %><br />
     <%= f.file_field :avatar %><br />
     
-    <%= link_to 'Delete avatar', delete_avatar_path(@user) %>
+    <%= link_to 'Delete avatar', delete_avatar_path(@user), class:'btn btn-danger' %>
   </div>
   
   <div class="field">
     <%= f.label :public_profile %><br />
-    <%= f.check_box :public_profile %>
+    <%= f.check_box :public_profile, class:'form-control' %>
   </div>
   
   <div class="field">
     <%= f.label :public_sleep_log %><br />
-    <%= f.check_box :public_sleep_log %>
+    <%= f.check_box :public_sleep_log, class:'form-control' %>
   </div>
   
   <div class="field">
     <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true %>
+    <%= f.text_field :username, autofocus: true, class:'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email %>
+    <%= f.email_field :email, class:'form-control' %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -42,22 +42,22 @@
   <% if @user.provider.blank? || @user.provider.nil? %>
       <div class="field">
         <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.password_field :password, autocomplete: "off", class:'form-control' %>
       </div>
       
       <div class="field">
         <%= f.label :password_confirmation %> <br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class:'form-control' %>
       </div>
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update", class:'btn btn-primary' %>
   </div>
 <% end %>
 
 <h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:'btn btn-danger' %></p>
 
 <%= link_to "Back", :back %>

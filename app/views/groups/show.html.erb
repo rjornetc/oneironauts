@@ -44,13 +44,37 @@
         </div>
         <hr />
     <% end %>
-    <h3>Members</h3>
-    <% @group.users.each do |user| %>
-        <%= user.username %>
-        <% if policy(@group).remove_member? && user != current_user %>
-            <%= link_to "Remove member", group_user_path(group_id: @group.id, user_id: user.id), method: :delete %>
-        <% end %><br />
-    <% end %>
+    <div class="row">
+        <div class="col-xs-6">
+            <h3>Members</h3>
+            <% @group.users.each do |user| %>
+                <%= user.username %>
+                <% if policy(@group).remove_member? && user != current_user %>
+                    <%= link_to "Remove member", group_user_path(group_id: @group.id, user_id: user.id), method: :delete %>
+                <% end %><br />
+            <% end %>
+        </div>
+        <div class="col-xs-6">
+            <h3>Board</h3>
+            <% @group.board_messages.all.order(:created_at).each do |m| %>
+                <%= m.content %><br />
+                <%= m.user.username %><br />
+                <%= time_ago_in_words m.created_at %> ago<br />
+                <% if policy(m).edit? %>
+                    <%= link_to edit_board_message_path(m), class: 'btn btn-warning' do %><i class="fa fa-pencil"></i> Edit<% end %>
+                <% end %>
+                <hr />
+            <% end %>
+            <hr />
+            <%= form_for BoardMessage.new do |f| %>
+                <%= f.label :content %><br />
+                <%= f.text_field :content, class:'form-control' %>
+                <%= hidden_field_tag(:group_id, @group.id, class:'btn btn-primary') %>
+                <%= hidden_field_tag(:user_id, current_user.id, class:'btn btn-primary') %>
+                <%= f.submit "Send", class:'btn btn-primary' %>
+            <% end %>
+        </div>
+    </div>
     <script>
     $('#add_a_member a').click(function (e) {
       e.preventDefault()

@@ -1,2 +1,6 @@
-<h1>BoardMessages#edit</h1>
-<p>Find me in app/views/board_messages/edit.html.erb</p>
+<h1>Editing your message</h1>
+<%= form_for @message do |f| %>
+    <%= f.label :content %><br />
+    <%= f.text_field :content, class:'form-control' %>
+    <%= f.submit "Send", class:'btn btn-primary' %>
+<% end %>
