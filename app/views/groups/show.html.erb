@@ -1,59 +1,60 @@
 <h1><i class="fa fa-users"></i> <%= @group.name.capitalize %></h1>
 <p><%= @group.description.capitalize %></p>
-<% if policy(@group).edit? %>
-    <%= link_to edit_group_path(@group), class: 'btn btn-warning', style:"float: right;" do %><i class="fa fa-pencil"></i> Edit<% end %>
-<% end %>
-<% if policy(@group).add_member? %>
-    <h3>Add new Users (αlpha => will be moved to a dialog)</h3>
-    <ul class="nav nav-tabs" role="tablist" id="add_a_member">
-      <li role="presentation" class="active"><a href="#friends" role="tab" aria-controls="friends" data-toggle="tab"><i class="fa fa-heart"></i> Friends</a></li>
-      <li role="presentation"><a href="#following" role="tab" aria-controls="following" data-toggle="tab"><i class="fa fa-star"></i> Following</a></li>
-      <li role="presentation"><a href="#followers" role="tab" aria-controls="followers" data-toggle="tab"><i class="fa fa-cloud"></i> Followers</a></li>
-    </ul>
-    <div class="tab-content">
-        <div class="friends tab-pane active" role="tabpanel" id="friends">
-            <h1><i class="fa fa-heart"></i> Friends</h1>
-            <% @friends.each do |u|  #TODO show user's friends and a search box in a dialog #issue28 %>
-                <%= u.username %>
-                <% if policy(@group).add_member? && u != current_user %>
-                    <%= link_to "Add member", group_users_path(group_id: @group.id, user_id: u.id), :method => :post %>
-                <% end %><br />
-            <% end %>
+<% if @group.public %>
+    <% if policy(@group).edit? %>
+        <%= link_to edit_group_path(@group), class: 'btn btn-warning', style:"float: right;" do %><i class="fa fa-pencil"></i> Edit<% end %>
+    <% end %>
+    <% if policy(@group).add_member? %>
+        <h3>Add new Users (αlpha => will be moved to a dialog)</h3>
+        <ul class="nav nav-tabs" role="tablist" id="add_a_member">
+          <li role="presentation" class="active"><a href="#friends" role="tab" aria-controls="friends" data-toggle="tab"><i class="fa fa-heart"></i> Friends</a></li>
+          <li role="presentation"><a href="#following" role="tab" aria-controls="following" data-toggle="tab"><i class="fa fa-star"></i> Following</a></li>
+          <li role="presentation"><a href="#followers" role="tab" aria-controls="followers" data-toggle="tab"><i class="fa fa-cloud"></i> Followers</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="friends tab-pane active" role="tabpanel" id="friends">
+                <h1><i class="fa fa-heart"></i> Friends</h1>
+                <% @friends.each do |u|  #TODO show user's friends and a search box in a dialog #issue28 %>
+                    <%= u.username %>
+                    <% if policy(@group).add_member? && u != current_user %>
+                        <%= link_to "Add member", group_users_path(group_id: @group.id, user_id: u.id), :method => :post %>
+                    <% end %><br />
+                <% end %>
+            </div>
+            
+            <div class="following tab-pane" role="tabpanel" id="following">
+                <h1><i class="fa fa-star"></i> Following</h1>
+                <% @following.each do |u|  #TODO show user's friends and a search box in a dialog #issue28 %>
+                    <%= u.username %>
+                    <% if policy(@group).add_member? && u != current_user %>
+                        <%= link_to "Add member", group_users_path(group_id: @group.id, user_id: u.id), :method => :post %>
+                    <% end %><br />
+                <% end %>
+            </div>
+            
+            <div class="followers tab-pane" role="tabpanel" id="followers">
+                <h1><i class="fa fa-cloud"></i> Followers</h1>
+                <% @followers.each do |u|  #TODO show user's friends and a search box in a dialog #issue28 %>
+                    <%= u.username %>
+                    <% if policy(@group).add_member? && u != current_user %>
+                        <%= link_to "Add member", group_users_path(group_id: @group.id, user_id: u.id), :method => :post %>
+                    <% end %><br />
+                <% end %>
+            </div>
         </div>
-        
-        <div class="following tab-pane" role="tabpanel" id="following">
-            <h1><i class="fa fa-star"></i> Following</h1>
-            <% @following.each do |u|  #TODO show user's friends and a search box in a dialog #issue28 %>
-                <%= u.username %>
-                <% if policy(@group).add_member? && u != current_user %>
-                    <%= link_to "Add member", group_users_path(group_id: @group.id, user_id: u.id), :method => :post %>
-                <% end %><br />
-            <% end %>
-        </div>
-        
-        <div class="followers tab-pane" role="tabpanel" id="followers">
-            <h1><i class="fa fa-cloud"></i> Followers</h1>
-            <% @followers.each do |u|  #TODO show user's friends and a search box in a dialog #issue28 %>
-                <%= u.username %>
-                <% if policy(@group).add_member? && u != current_user %>
-                    <%= link_to "Add member", group_users_path(group_id: @group.id, user_id: u.id), :method => :post %>
-                <% end %><br />
-            <% end %>
-        </div>
-    </div>
-    <hr />
+        <hr />
+    <% end %>
+    <h3>Members</h3>
+    <% @group.users.each do |user| %>
+        <%= user.username %>
+        <% if policy(@group).remove_member? && user != current_user %>
+            <%= link_to "Remove member", group_user_path(group_id: @group.id, user_id: user.id), method: :delete %>
+        <% end %><br />
+    <% end %>
+    <script>
+    $('#add_a_member a').click(function (e) {
+      e.preventDefault()
+      $(this).tab('show')
+    })
+    </script>
 <% end %>
-<h3>Members</h3>
-<% @group.users.each do |user| %>
-    <%= user.username %>
-    <% if policy(@group).remove_member? && user != current_user %>
-        <%= link_to "Remove member", group_user_path(group_id: @group.id, user_id: user.id), method: :delete %>
-    <% end %><br />
-<% end %>
-<script>
-$('#add_a_member a').click(function (e) {
-  e.preventDefault()
-  $(this).tab('show')
-})
-</script>
-
