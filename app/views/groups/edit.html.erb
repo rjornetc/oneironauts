@@ -1,2 +1,21 @@
-<h1>Groups#edit</h1>
-<p>Find me in app/views/groups/edit.html.erb</p>
+<h1><%= @group.name %></h1>
+<%= form_for(@group) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, class:'form-control' %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :public %><br />
+    <%= f.check_box :public, class:'form-control' %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description, class:'form-control' %>
+  </div>
+    
+  <div class="actions">
+    <%= f.submit "Create group", class:'btn btn-primary' %>
+  </div>
+<% end %>

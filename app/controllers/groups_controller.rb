@@ -26,6 +26,9 @@ class GroupsController < ApplicationController
 
   def update
       @group = Group.find(params[:id])
+      if @group.update
+          redirect_to @group
+      end
   end
 
   def delete
