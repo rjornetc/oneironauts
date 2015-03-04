@@ -11,6 +11,6 @@ development:
 
 test:
   adapter: postgresql
-    username: postgres
-    database: myapp_<%= Rails.env %>
-    min_messages: ERROR
+  username: postgres
+  database: myapp_<%= Rails.env %>
+  min_messages: ERROR
