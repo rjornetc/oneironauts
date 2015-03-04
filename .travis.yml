@@ -1,15 +1,10 @@
-addons:
-  postgresql: "9.3"
-  
+language: ruby
 rvm:
-1.9.3
-
+  - 1.9.3
 env:
-– DB=sqlite
-– DB=postgresql
-
-before_script:
-– psql -c 'create database webcalendar_test;' -U postgres
-
+  - DB=postgresql
 script:
-– RAILS_ENV=test bundle exec rake –trace db:migrate spec
+  - RAILS_ENV=test bundle exec rake --trace db:migrate test
+before_script:
+  - mysql -e 'create database myapp_test'
+  - psql -c 'create database myapp_test' -U postgres
