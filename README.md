@@ -1,6 +1,7 @@
 # Oneironauts
 ## The free and global dreamers' community
 [![Build Status](https://travis-ci.org/096acc/oneironauts.svg)](https://travis-ci.org/096acc/oneironauts)
+
 We all have our own dreams. Dreaming is a unique experience that enriches our lives in many ways, and especially if we can share it with others. Sometimes it is difficult to share our dreams, so we decided to create Oneironauts, the first social network by dreamers and for dreamers. We aim to be a free community. So why shouldn't we publish its code? Feel free to collaborate with us!
 
 ##LICENSE
