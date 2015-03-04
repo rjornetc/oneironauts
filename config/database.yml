@@ -52,3 +52,7 @@ development:
   # Defaults to warning.
   #min_messages: notice
 
+test:
+  adapter: postgresql
+  database: travis_ci_test
+  username: postgres
