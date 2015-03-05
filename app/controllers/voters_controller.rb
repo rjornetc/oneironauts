@@ -22,8 +22,10 @@ class VotersController < ApplicationController
     end 
     if params[:votable_type] == 'Post'
         redirect_to post_path(@votable)
+    elsif params[:votable_type] == 'Meaning'
+        redirect_to dream_sign_path(@votable.dream_sign_id)
     elsif params[:votable_type] == 'Comment'
-        redirect_to post_path(@votable.post)
+        redirect_to post_path(parent_post(@votable))
     end 
   end  
   
@@ -42,12 +44,22 @@ class VotersController < ApplicationController
     flash[:notice] = "Removed vote."  
     if params[:votable_type] == 'Post'
         redirect_to post_path(@votable)
+    elsif params[:votable_type] == 'Meaning'
+        redirect_to dream_sign_path(@votable.dream_sign_id)
     elsif params[:votable_type] == 'Comment'
-        redirect_to post_path(@votable.post)
+        redirect_to post_path(parent_post(@votable))
     end
   end
 
   private
+      def parent_post(c)
+          if c.has_attribute?(:commentable_id)
+              parent_post(c.commentable)
+          else
+              c
+          end
+      end
+  
       def vote_not_authorized
         flash[:alert] = "You aren't allowed to vote."
         redirect_to(request.referrer || root_path)
@@ -56,8 +68,10 @@ class VotersController < ApplicationController
       def set_votable
           if params[:votable_type] == 'Post'
               @votable = Post.find(params[:votable_id])
+          elsif params[:votable_type] == 'Meaning'
+              @votable = Meaning.find(params[:votable_id])
           elsif params[:votable_type] == 'Comment'
-              @votable = Post.find(params[:post_id]).comments.find(params[:votable_id])
+              @votable = Comment.find(params[:votable_id])
           end
           puts @votable
       end

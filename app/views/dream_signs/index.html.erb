@@ -1,2 +1,14 @@
-<h1>DreamSigns#index</h1>
-<p>Find me in app/views/dream_signs/index.html.erb</p>
+<h1>Dream Signs</h1>
+<% DreamSign.all.each do |d| %>
+    <h3><%= link_to d.name, d %></h3>
+    <b><%= d.meanings.count %> possible meanings</b><br />
+    <%= time_ago_in_words(d.created_at) %> ago by <%= link_to user_profile_path(d.user) do %>
+        <% if d.user.avatar.exists? %>
+            <%= image_tag d.user.avatar.url(:medium), class: 'mini-avatar' %>
+        <% else %>
+            <%= image_tag d.user.gravatar_url(default: 'identicon'), class: 'mini-avatar' %>
+        <% end %>
+        <%= d.user.username %>
+    <% end %><br />
+    <hr />
+<% end %>

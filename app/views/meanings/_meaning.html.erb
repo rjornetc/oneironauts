@@ -8,10 +8,10 @@
 <small><%= time_ago_in_words(meaning.created_at) %> ago | <span class="badge"><%= meaning.votes %> <i class="fa fa-heart-o"></i></span></small>
 
 <% if current_user && !meaning.voters.find_by_user_id(current_user.id) && meaning.user != current_user %>
-<%= link_to voters_path(post_id: @post.id, votable_id: meaning.id, votable_type: 'meaning', user_id: current_user.id, positive: true), :method => :post, class:'btn btn-primary' do %>Vote up <i class="fa fa-thumbs-o-up"></i><% end %>
-<%= link_to voters_path(post_id: @post.id, votable_id: meaning.id, votable_type: 'meaning', user_id: current_user.id, positive: false), :method => :post, class:'btn btn-primary' do %>Vote down <i class="fa fa-thumbs-o-down"></i><% end %>
+<%= link_to voters_path(post_id: @dream_sign.id, votable_id: meaning.id, votable_type: 'Meaning', user_id: current_user.id, positive: true), :method => :post, class:'btn btn-primary' do %>Vote up <i class="fa fa-thumbs-o-up"></i><% end %>
+<%= link_to voters_path(post_id: @dream_sign.id, votable_id: meaning.id, votable_type: 'Meaning', user_id: current_user.id, positive: false), :method => :post, class:'btn btn-primary' do %>Vote down <i class="fa fa-thumbs-o-down"></i><% end %>
 <% elsif current_user && meaning.voters.find_by_user_id(current_user.id) %>
-<%= link_to voter_path(post_id: @post.id, votable_id: meaning.id, votable_type: 'meaning', user_id: current_user.id), :method => :delete, class:'btn btn-danger' do %>Delete my vote <i class="fa fa-minus-circle"></i><% end %>
+<%= link_to voter_path(post_id: @dream_sign.id, votable_id: meaning.id, votable_type: 'Meaning', user_id: current_user.id), :method => :delete, class:'btn btn-danger' do %>Delete my vote <i class="fa fa-minus-circle"></i><% end %>
 <% end %>
 
 <% if current_user %>
