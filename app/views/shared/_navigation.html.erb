@@ -27,6 +27,7 @@
              Me <% end %></li>
             <li><%= link_to destroy_user_session_path, method: :delete, :class => 'navbar-link' do%><i class="fa fa-sign-out"></i> Log out<%end%></li>
         <% else %>
+            <li><%= link_to dream_signs_path do%><i class="fa fa-book"></i> Dream Dictionary<%end%></li>
             <li><%= link_to new_user_session_path do %><i class="fa fa-sign-in"></i> Log in<% end %></li>
             <li><%= link_to new_user_registration_path do %><i class="fa fa-user-plus"></i> Sign up<% end %></li>
         <% end %>
