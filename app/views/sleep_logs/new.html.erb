@@ -1,2 +1,5 @@
-<h1>SleepLogs#new</h1>
-<p>Find me in app/views/sleep_logs/new.html.erb</p>
+<h1>New Sleep Log Entry</h1>
+<%= form_for [current_user, SleepLog.new] do |f| %>
+    <%= f.label :date %>
+    <%= f.date_field :date, class:'form-control' %>
+<% end %>

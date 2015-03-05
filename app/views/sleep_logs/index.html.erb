@@ -1,2 +1,12 @@
-<h1>SleepLogs#index</h1>
-<p>Find me in app/views/sleep_logs/index.html.erb</p>
+<%= link_to new_user_sleep_log_path, style:'float: right;', class:'btn btn-primary' do %><i class="fa fa-plus"></i> Add Entry<% end %>
+<h1>Your Sleep Log</h1>
+<hr />
+<%= current_user.sleep_logs.each do |l| %>
+    <%= l.date %>: <%= l.start_time %> -  <%= l.end_time %> (<% l.start_time - l.end_time %>)
+    <% current_user.dreams.find_by_created_at(l.date).each do |d| %>
+        <%= link_to d.title, d %>
+    <% end %>
+    <hr />
+<% end %>
+
+<%= @img.output.html_safe %>
