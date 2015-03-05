@@ -3,7 +3,7 @@ class CreateMeanings < ActiveRecord::Migration
     create_table :meanings do |t|
       t.integer :user_id
       t.string :description
-      t.integer :votes
+      t.integer :votes, default: 0
       t.boolean :spam
 
       t.timestamps null: false
