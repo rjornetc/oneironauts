@@ -1,4 +1,6 @@
-<%= link_to new_dream_sign_path, class:'btn btn-primary', style:'float: right;' do %><i class="fa fa-plus"></i> Add<% end %>
+<% if user_logged_in?%>
+    <%= link_to new_dream_sign_path, class:'btn btn-primary', style:'float: right;' do %><i class="fa fa-plus"></i> Add<% end %>
+<% end %>
 <h1>Dream Signs Dictionary</h1>
 <% DreamSign.all.each do |d| %>
     <h3><%= link_to d.name, d %></h3>
