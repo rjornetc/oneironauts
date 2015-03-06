@@ -1,13 +1,17 @@
 class BoardMessagesController < ApplicationController
+  
+  include Pundit
+  rescue_from Pundit::NotAuthorizedError, with: :message_not_authorized
+  
   def index
       @messages = BoardMessage.all
   end
 
   def create
       @message = BoardMessage.create(message_params)
-      authorize @message
       @message.user_id = params[:user_id]
       @message.group_id = params[:group_id]
+      authorize @message
       if @message.save
           redirect_to @message.group
       end
@@ -53,5 +57,10 @@ class BoardMessagesController < ApplicationController
   private
       def message_params
           params.require(:board_message).permit(:content, :user_id, :group_id)
+      end
+      
+      def message_not_authorized
+        flash[:alert] = "You aren't allowed to chat in this group."
+        redirect_to(request.referrer || root_path)
       end
 end

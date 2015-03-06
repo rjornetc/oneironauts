@@ -1,4 +1,8 @@
 class GroupsController < ApplicationController
+
+  include Pundit
+  rescue_from Pundit::NotAuthorizedError, with: :group_not_authorized
+
   def index
       @groups = Group.all
   end
@@ -26,7 +30,7 @@ class GroupsController < ApplicationController
 
   def update
       @group = Group.find(params[:id])
-      if @group.update
+      if @group.update(group_params)
           redirect_to @group
       end
   end
@@ -70,6 +74,11 @@ class GroupsController < ApplicationController
   
   private
       def group_params
-          params.require(:group).permit(:name, :description)
+          params.require(:group).permit(:name, :description, :public)
+      end
+      
+      def group_not_authorized
+        flash[:alert] = "You aren't allowed to do that."
+        redirect_to(request.referrer || root_path)
       end
 end
