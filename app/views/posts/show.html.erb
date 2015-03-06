@@ -13,7 +13,7 @@
 </small>
 <p><%= @post.content %></p>
 
-<p><i class="fa fa-comments-o"></i> <%= @post.comments.count %> comments | <%= @post.votes %> <i class="fa fa-heart-o"></i> | <%= time_ago_in_words(@post.created_at) %> ago
+<p><%= @post.votes %> <i class="fa fa-heart-o"></i> | <%= time_ago_in_words(@post.created_at) %> ago
 </p>
 <% if current_user && !@post.voters.find_by_user_id(current_user.id) && @post.user != current_user %>
 <%= link_to voters_path(votable_id: @post.id, votable_type: 'Post', user_id: current_user.id, positive: true), :method => :post, class:'btn btn-primary' do %>Vote up <i class="fa fa-thumbs-o-up"></i><% end %>

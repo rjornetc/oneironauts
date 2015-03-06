@@ -10,7 +10,7 @@
             <%= link_to post.user.username, user_profile_path(post.user) %> 
             </small><br /><br />
             <p><%= truncate(CGI::unescapeHTML(post.content.html_safe.gsub(/<\/?[^>]*>/," ")), :omission => "...", :length => 512) %></p>
-            <p><i class="fa fa-comments-o"></i> <%= post.comments.count %> comments | <%= post.votes %> <i class="fa fa-heart-o"></i> | <%= time_ago_in_words(post.created_at) %> ago
+            <p><%= post.votes %> <i class="fa fa-heart-o"></i> | <%= time_ago_in_words(post.created_at) %> ago
             </p>
             <hr />
         <% end %>
