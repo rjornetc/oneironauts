@@ -16,19 +16,40 @@
         <div class="col-xs-4">
             <h3 style="text-align: center;">Friends</h3>
             <% @friends.each do |friend| %>
-                <%= friend.username %>
+                <%= link_to user_profile_path(friend) do %>
+                    <% if friend.avatar.exists? %>
+                        <%= image_tag friend.avatar.url(:medium), class: 'mini-avatar' %>
+                    <% else %>
+                        <%= image_tag friend.gravatar_url(default: 'identicon'), class: 'mini-avatar' %>
+                    <% end %>
+                <% end %>
+                <%= link_to friend.username, friend %>
             <% end %>
         </div>
         <div class="col-xs-4">
             <h3 style="text-align: center;">Followers</h3>
             <% @followers.each do |friend| %>
-                <%= friend.username %>
+                <%= link_to user_profile_path(friend) do %>
+                    <% if friend.avatar.exists? %>
+                        <%= image_tag friend.avatar.url(:medium), class: 'mini-avatar' %>
+                    <% else %>
+                        <%= image_tag friend.gravatar_url(default: 'identicon'), class: 'mini-avatar' %>
+                    <% end %>
+                <% end %>
+                <%= link_to friend.username, friend %>
             <% end %>
         </div>
         <div class="col-xs-4">
             <h3 style="text-align: center;">Following</h3>
             <% @following.each do |friend| %>
-                <%= friend.username %>
+                <%= link_to user_profile_path(friend) do %>
+                    <% if friend.avatar.exists? %>
+                        <%= image_tag friend.avatar.url(:medium), class: 'mini-avatar' %>
+                    <% else %>
+                        <%= image_tag friend.gravatar_url(default: 'identicon'), class: 'mini-avatar' %>
+                    <% end %>
+                <% end %>
+                <%= link_to friend.username, friend %>
             <% end %>
         </div>
     </div>
