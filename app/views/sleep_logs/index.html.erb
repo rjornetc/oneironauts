@@ -1,10 +1,12 @@
 <%= link_to new_user_sleep_log_path, style:'float: right;', class:'btn btn-primary' do %><i class="fa fa-plus"></i> Add Entry<% end %>
 <h1>Your Sleep Log</h1>
 <hr />
-<%= current_user.sleep_logs.each do |l| %>
-    <%= l.date %>: <%= l.start_time %> -  <%= l.end_time %> (<% l.start_time - l.end_time %>)
-    <% current_user.dreams.find_by_created_at(l.date).each do |d| %>
-        <%= link_to d.title, d %>
+<% current_user.sleep_logs.each do |l| %>
+    <%= l.date %>: <%= l.start_time %> -  <%= l.end_time %> [<%= slept_hours(l) %> hour(s)]
+    <% if(l.user.dreams.where(date: l.date)) %>
+        <% l.user.dreams.where(date: l.date).find_each do |d| %>
+            <%= link_to d.title, d %>
+        <% end %>
     <% end %>
     <hr />
 <% end %>

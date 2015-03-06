@@ -1,5 +1,10 @@
 <h1>New Sleep Log Entry</h1>
 <%= form_for [current_user, SleepLog.new] do |f| %>
-    <%= f.label :date %>
-    <%= f.date_field :date, class:'form-control' %>
+    <%= f.label :date %><br />
+    <%= f.date_select(:date,:start_year => 1950, class:'form-control') %><br />
+    <%= f.label :start_time %><br />
+    <%= f.time_select(:start_time, class:'form-control') %><br />
+    <%= f.label :end_time %><br />
+    <%= f.time_select(:end_time, class:'form-control') %><br />
+    <%= f.submit "Submit", class:'btn btn-primary' %>
 <% end %>

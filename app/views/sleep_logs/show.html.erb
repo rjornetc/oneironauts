@@ -1,0 +1,8 @@
+<h1><%= @log.date %> Sleep Log</h1>
+<%= @log.start_time %><br />
+<%= @log.end_time %><br />
+<% if(@log.user.dreams.where(date: @log.date)) %>
+    <% @log.user.dreams.where(date: @log.date).find_each do |d| %>
+        <%= link_to d.title, d %>
+    <% end %>
+<% end %>
