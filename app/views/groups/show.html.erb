@@ -28,9 +28,9 @@
                             <%= image_tag u.gravatar_url(default: 'identicon'), class: 'mini-avatar' %>
                         <% end %>
                     <% end %>
-                    <%= u.username %>
+                    <%= link_to u.username, u %>
                     <% if policy(@group).add_member? && u != current_user %>
-                        <%= link_to "Add member", group_users_path(group_id: @group.id, user_id: u.id), :method => :post %>
+                        <%= link_to "Add member", group_users_path(group_id: @group.id, user_id: u.id, manager:false), :method => :post, class:'btn btn-success' %>
                     <% end %><br />
                 <% end %>
             </div>
@@ -45,9 +45,9 @@
                             <%= image_tag u.gravatar_url(default: 'identicon'), class: 'mini-avatar' %>
                         <% end %>
                     <% end %>
-                    <%= u.username %>
+                    <%= link_to u.username, u %>
                     <% if policy(@group).add_member? && u != current_user %>
-                        <%= link_to "Add member", group_users_path(group_id: @group.id, user_id: u.id), :method => :post %>
+                        <%= link_to "Add member", group_users_path(group_id: @group.id, user_id: u.id, manager:false), :method => :post, class:'btn btn-success' %>
                     <% end %><br />
                 <% end %>
             </div>
@@ -62,9 +62,9 @@
                             <%= image_tag u.gravatar_url(default: 'identicon'), class: 'mini-avatar' %>
                         <% end %>
                     <% end %>
-                    <%= u.username %>
+                    <%= link_to u.username, u %>
                     <% if policy(@group).add_member? && u != current_user %>
-                        <%= link_to "Add member", group_users_path(group_id: @group.id, user_id: u.id), :method => :post %>
+                        <%= link_to "Add member", group_users_path(group_id: @group.id, user_id: u.id, manager:false), :method => :post, class:'btn btn-success' %>
                     <% end %><br />
                 <% end %>
             </div>
@@ -82,9 +82,9 @@
                         <%= image_tag user.gravatar_url(default: 'identicon'), class: 'mini-avatar' %>
                     <% end %>
                 <% end %>
-                <%= user.username %>
+                <%= link_to user.username, user_profile_path(user) %>
                 <% if policy(@group).remove_member? && user != current_user %>
-                    <%= link_to "Remove member", group_user_path(group_id: @group.id, user_id: user.id), method: :delete %>
+                    <%= link_to "Remove member", group_user_path(group_id: @group.id, user_id: user.id), method: :delete, class:'btn btn-danger' %>
                 <% end %><br />
             <% end %>
         </div>
@@ -99,7 +99,7 @@
                         <%= image_tag m.user.gravatar_url(default: 'identicon'), class: 'mini-avatar' %>
                     <% end %>
                 <% end %>
-                <%= m.user.username %><br />
+                <%= link_to m.user.username, m.user %><br />
                 <%= time_ago_in_words m.created_at %> ago<br />
                 <% if policy(m).edit? %>
                     <%= link_to edit_board_message_path(m), class: 'btn btn-warning' do %><i class="fa fa-pencil"></i> Edit<% end %>

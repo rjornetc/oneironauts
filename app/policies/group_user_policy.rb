@@ -11,7 +11,7 @@ class GroupUserPolicy
   end
 
   def destroy?
-    @user && (@record.group.group_users.find_by_user_id(@user.id).manager || @record.user == @user)
+    @user && (@record.group.group_users.find_by_user_id(@user.id).manager || @record.user == @user) || @user.role.name == "admin"
   end
 
 
