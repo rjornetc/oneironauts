@@ -7,11 +7,11 @@ class GroupUserPolicy
   end
 
   def create?
-    @user #TODO CHECK GROUP PRIVACY
+    @user
   end
 
   def destroy?
-    @user && @record.group.users.find_by_username(@user.username) && @record.group.users.find_by_username(@user.username).manager
+    @user && (@record.group.group_users.find_by_user_id(@user.id).manager || @record.user == @user)
   end
 
 
