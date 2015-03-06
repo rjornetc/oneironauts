@@ -15,7 +15,6 @@
 <% end %>
 
 <% if current_user %>
-    <%= link_to new_meaning_path(meaningable_type: "meaning", meaningable_id: meaning.id), class:'btn btn-success' do %>Reply <i class="fa fa-reply"></i><% end %>
     <% if policy(meaning).edit? %>
         <%= link_to edit_meaning_path(meaning), class: 'btn btn-warning' do %><i class="fa fa-pencil"></i> Edit<% end %>
     <% end %>
