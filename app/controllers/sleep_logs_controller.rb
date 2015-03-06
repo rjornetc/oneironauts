@@ -1,13 +1,14 @@
 class SleepLogsController < ApplicationController
-  require 'rasem'
+#  require 'rasem'
   def index
       
-      @img = Rasem::SVGImage.new(300,300) do
-        
-        circle 20, 20, 5
-        circle 50, 50, 5
-        line 20, 20, 50, 50
-      end
+#      @img = Rasem::SVGImage.new(300,300) do
+#        
+#        circle 20, 20, 5
+#        circle 50, 50, 5
+#        line 20, 20, 50, 50
+#      end
+
   end
 
   def show

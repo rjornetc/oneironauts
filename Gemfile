@@ -6,6 +6,7 @@ gem 'rails', '4.2.0'
 gem 'pg'
 gem 'slim'
 gem 'cocoon'
+gem 'gruff'
 gem 'rasem'
 gem 'rails_12factor', group: :production
 gem 'devise'
