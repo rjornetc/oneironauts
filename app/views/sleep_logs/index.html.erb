@@ -2,6 +2,8 @@
 <h1>Your Sleep Log</h1>
 <hr />
 <% current_user.sleep_logs.each do |l| %>
+    <%= link_to user_sleep_log_path(user_id: current_user.id, id: l.id), method: :delete, class:'btn btn-danger', style:'float: right; margin-left: 5px;' do %><i class="fa fa-trash"></i> Delete<% end %>
+    <%= link_to edit_user_sleep_log_path(user_id: current_user.id, id: l.id), class:'btn btn-warning', style:'float: right;' do %><i class="fa fa-pencil"></i> Edit<% end %>
     <%= l.date %>: <%= l.start_time %> -  <%= l.end_time %> [<%= slept_hours(l) %> hour(s)]
     <% if(l.user.dreams.where(date: l.date)) %>
         <% l.user.dreams.where(date: l.date).find_each do |d| %>

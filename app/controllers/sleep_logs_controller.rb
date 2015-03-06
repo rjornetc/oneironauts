@@ -18,7 +18,10 @@ class SleepLogsController < ApplicationController
       @log = SleepLog.create(sleep_log_params)
       @log.user_id = current_user.id
       if @log.save
-          redirect_to user_sleep_log_path(user_id: current_user.id, id: @log.id)
+          redirect_to user_sleep_logs_path(current_user.id)
+      else 
+          flash[:alert] = 'You can only enter a Sleep Log Entry per date'
+          redirect_to user_sleep_logs_path(current_user.id)
       end
   end
 
@@ -28,6 +31,8 @@ class SleepLogsController < ApplicationController
 
   def destroy
       @log = User.find(params[:user_id]).sleep_logs.find(params[:id])
+      @log.destroy
+      redirect_to user_sleep_logs_path(current_user.id)
   end
 
   def delete
@@ -40,6 +45,12 @@ class SleepLogsController < ApplicationController
 
   def update
       @log = User.find(params[:user_id]).sleep_logs.find(params[:id])
+      if @log.update(sleep_log_params)
+          redirect_to user_sleep_logs_path(current_user.id)
+      else 
+          flash[:alert] = 'You can only enter a Sleep Log Entry per date'
+          redirect_to user_sleep_logs_path(current_user.id)
+      end
   end
   
   private

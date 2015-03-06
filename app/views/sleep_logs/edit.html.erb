@@ -1,2 +1,10 @@
-<h1>SleepLogs#edit</h1>
-<p>Find me in app/views/sleep_logs/edit.html.erb</p>
+<h1>Edit Sleep Log Entry</h1>
+<%= form_for [current_user, @log] do |f| %>
+    <%= f.label :date %><br />
+    <%= f.date_select(:date,:start_year => 1950, class:'form-control') %><br />
+    <%= f.label :start_time %><br />
+    <%= f.time_select(:start_time, class:'form-control') %><br />
+    <%= f.label :end_time %><br />
+    <%= f.time_select(:end_time, class:'form-control') %><br />
+    <%= f.submit "Submit", class:'btn btn-primary' %>
+<% end %>
