@@ -12,5 +12,33 @@
     <% end %>
     <hr />
 <% end %>
+<div class="charts" style="text-align: center;">
+    <div id="dream_chart" style="height: 300px; width: 45%; display: inline-block;"></div>
+    <div id="hours_chart" style="height: 300px; width: 45%; display: inline-block;"></div>
+</div>
+<script>
+       var url = "/users/<%=current_user.id%>/sleep_logs.json"
+       var dream_json= $.getJSON(url, null, function(data) {
+           var get_dream_data = dream_json.responseText;
+           new Morris.Area({
+             element: 'dream_chart',
+             data: $.parseJSON((get_dream_data)),
+             xkey: 'date',
+             ykeys: ['log_dreams'],
+             areaColors: ['#3F61BA'],
+             labels: ['Dreams']
+               }); done();
+           }); 
+       var hour_json= $.getJSON(url, null, function(data) {
+           var get_hour_data = hour_json.responseText;
+           new Morris.Bar({
+             element: 'hours_chart',
+             data: $.parseJSON((get_hour_data)),
+             xkey: 'date',
+             ykeys: ['log_hours'],
+             barColors: ['#f3c247'],
+             labels: ['Slept Hours']
+             }); done();  
+           });         
+</script>
 
-<%= @img.output.html_safe %>

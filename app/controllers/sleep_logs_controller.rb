@@ -1,6 +1,14 @@
 class SleepLogsController < ApplicationController
+
+  respond_to :html, :json
+
 #  require 'rasem'
   def index
+      @sleep_logs = SleepLog.all.where(user_id: current_user.id).find_each
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render :json => @sleep_logs.to_json(:methods => [:log_dreams, :log_hours]) }
+      end
       
 #      @img = Rasem::SVGImage.new(300,300) do
 #        
