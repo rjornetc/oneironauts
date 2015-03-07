@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'sleep_guide' => 'sleep_guide#index'
+
   resources :board_messages
 
   resources :voters

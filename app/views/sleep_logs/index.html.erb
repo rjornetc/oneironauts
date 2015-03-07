@@ -1,6 +1,11 @@
 <%= link_to new_user_sleep_log_path, style:'float: right;', class:'btn btn-primary' do %><i class="fa fa-plus"></i> Add Entry<% end %>
 <h1>Your Sleep Log</h1>
 <hr />
+<div class="well">
+    <h3>Keep up with the good sleeping</h3>
+    <p>Sleeping has many benefits for your health. Improves memory, lengthen life expectancy improves attention and mood, prevents overweight... To learn more about how to sleep well, just visit our Sleeping Habits Guide.</p>
+    <%= link_to sleep_guide_path, class:'btn btn-success' do %><i class="fa fa-moon-o"></i> Learn More<% end %>
+</div>
 <% current_user.sleep_logs.each do |l| %>
     <%= link_to user_sleep_log_path(user_id: current_user.id, id: l.id), method: :delete, class:'btn btn-danger', style:'float: right; margin-left: 5px;' do %><i class="fa fa-trash"></i> Delete<% end %>
     <%= link_to edit_user_sleep_log_path(user_id: current_user.id, id: l.id), class:'btn btn-warning', style:'float: right;' do %><i class="fa fa-pencil"></i> Edit<% end %>
@@ -24,19 +29,24 @@
              element: 'dream_chart',
              data: $.parseJSON((get_dream_data)),
              xkey: 'date',
+             resize: true,
+             smooth: false,
              ykeys: ['log_dreams'],
-             areaColors: ['#3F61BA'],
+             lineColors: ['#3F61BA'],
              labels: ['Dreams']
                }); done();
            }); 
        var hour_json= $.getJSON(url, null, function(data) {
            var get_hour_data = hour_json.responseText;
-           new Morris.Bar({
+           new Morris.Line({
              element: 'hours_chart',
              data: $.parseJSON((get_hour_data)),
              xkey: 'date',
+             pointSize: 5,
+             resize: true,
+             smooth: false,
              ykeys: ['log_hours'],
-             barColors: ['#f3c247'],
+             lineColors: ['#f3c247'],
              labels: ['Slept Hours']
              }); done();  
            });         
