@@ -1,5 +1,5 @@
-<h1>Write a Dream in your Journal</h1>
-<%= form_for [current_user, Dream.new] do |f| %>
+<h1>Editing a Dream in your Journal</h1>
+<%= form_for [@user, @dream] do |f| %>
     <%= f.label :title %><br />
     <%= f.text_field :title, class:'form-control' %><br />
     <%= f.label :content, "Description" %><br />

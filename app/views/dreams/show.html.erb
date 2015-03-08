@@ -1,3 +1,6 @@
-<h1><%= @dream.title %></h1>
+<% if policy(@dream).edit? %>
+    <%= link_to edit_user_dream_path(user_id: current_user.id, id: @dream.id), class: 'btn btn-warning', style:"float: right;" do %><i class="fa fa-pencil"></i> Edit<% end %>
+<% end %>
+<h1><%= @dream.title.capitalize %></h1>
 <%= @dream.date %><br />
 <%= @dream.content %><br />
