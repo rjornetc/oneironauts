@@ -5,7 +5,7 @@ gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem 'slim'
-#gem 'cocoon'
+gem 'cocoon'
 #gem 'gruff'
 #gem 'rasem'
 gem 'morrisjs-rails'

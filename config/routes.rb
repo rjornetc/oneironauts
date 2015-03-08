@@ -47,13 +47,8 @@ Rails.application.routes.draw do
     end
   resources :users do
       resources :sleep_logs
-      resources :dreams do
-          member do
-              get 'vote_up'
-              get 'vote_down'
-              get 'set_scope'
-          end
-      end
+      resources :dreams 
+      resources :characters
   end
   resources :widgets
 

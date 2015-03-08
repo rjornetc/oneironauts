@@ -8,5 +8,14 @@
     <%= f.date_select :date, class:'form-control' %><br />
     <%= f.label :public %><br />
     <%= f.check_box :public, class:'form-control' %><br />
+    <div id='dream_characters'>
+        <%= f.label :dream_characters %>
+        <%= f.fields_for :dream_characters do |d| %>
+          <%= render 'dream_character_fields', :f => d %>
+        <% end %>
+        <div class='links'>
+          <%= link_to_add_association 'add Character', f, :dream_characters, class:'btn btn-success' %>
+        </div>
+    </div><br />
     <%= f.submit "Submit", class:'btn btn-primary' %>
 <% end %>
