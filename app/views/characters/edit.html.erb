@@ -1,2 +1,12 @@
-<h1>Characters#edit</h1>
-<p>Find me in app/views/characters/edit.html.erb</p>
+<h1>Editing a Character</h1>
+<%= form_for [current_user, @character] do |f| %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, class:'form-control' %><br />
+    <%= f.label :description %><br />
+    <%= f.text_area :description, class:'form-control' %><br />
+    <%= f.label :real %><br />
+    <%= f.check_box :real, class:'form-control' %><br />
+    <%= f.label :public %><br />
+    <%= f.check_box :public, class:'form-control' %><br />
+    <%= f.submit "Save", class:'btn btn-primary' %>
+<% end %>

@@ -1,2 +1,11 @@
-<h1>Characters#show</h1>
-<p>Find me in app/views/characters/show.html.erb</p>
+<% if policy(@character).edit? %>
+    <%= link_to edit_user_character_path(user_id: @user.id, id: @character.id), class:'btn btn-warning', style:'float:right; margin-left:5px;' do %><i class="fa fa-pencil"></i> Edit<% end %>
+<% end %>
+<%if policy(@character).show? %>
+    <% if @character.real %>
+        <div class="btn btn-danger" style="float: right;">Real Character</div>
+    <% end %>
+    <h1><%= @character.name %></h1>
+    <p><%= @character.description %></p>
+<% end %>
+

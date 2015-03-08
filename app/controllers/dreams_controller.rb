@@ -53,12 +53,12 @@ class DreamsController < ApplicationController
       authorize @dream
       @dream.user = current_user
       @dream.update(dream_params)
-      redirect_to user_dream_path(@dream)
+      redirect_to user_dream_path(user_id: current_user.id, id: @dream.id)
   end
   
   private
       def dream_params
-          params.require(:dream).permit(:title, :content, :votes, :user_id, :interpretation, :pulic, :date, dream_characters_attributes: [:id, :dream_id, :character_id, :_destroy])
+          params.require(:dream).permit(:title, :content, :votes, :user_id, :interpretation, :public, :date, dream_characters_attributes: [:id, :dream_id, :character_id, :_destroy])
       end
       
       def dream_not_authorized
