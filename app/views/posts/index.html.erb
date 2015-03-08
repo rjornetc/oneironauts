@@ -1,14 +1,14 @@
-<h1>Blog</h1>
+<h1 style=" font-size: 4em; text-align:center;">the Blog</h1>
 <% Post.all.order(created_at: :desc).each do |post| %>
         <% if !post.draft %>
-            <h3><i class="fa fa-pencil"></i> <%= link_to post.title, post_path(post) %></h3>
-            <small><% if post.user.avatar.exists? %>
+            <h3 style="font-size: 2em;"><i class="fa fa-pencil"></i> <%= link_to post.title.capitalize, post_path(post) %></h3>
+<!--            <small style="float: right;"><% if post.user.avatar.exists? %>
                 <%= image_tag post.user.avatar.url(:medium), class: 'little-avatar' %>
             <% else %>
                 <%= image_tag post.user.gravatar_url(default: 'identicon'), class: 'little-avatar' %>
             <% end %>
             <%= link_to post.user.username, user_profile_path(post.user) %> 
-            </small><br /><br />
+            </small><br /><br />-->
             <p><%= truncate(CGI::unescapeHTML(post.content.html_safe.gsub(/<\/?[^>]*>/," ")), :omission => "...", :length => 512) %></p>
             <p><%= post.votes %> <i class="fa fa-heart-o"></i> | <%= time_ago_in_words(post.created_at) %> ago
             </p>

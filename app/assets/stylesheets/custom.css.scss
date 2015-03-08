@@ -2,6 +2,8 @@
 //= depend_on_asset "banner2.jpg"
 //= depend_on_asset "banner3.jpg"
 //= depend_on_asset "banner4.jpg"
+//= depend_on_asset "banner5.jpg"
+//= depend_on_asset "bannerBlog.jpg"
 .avatar {
     width: 80px;
     height: 80px;
@@ -76,6 +78,15 @@
 
 .banner5{
     background-image: url(banner5.jpg) !important;
+    background-attachment: fixed;
+    background-size:   cover;
+    background-repeat: no-repeat;
+    background-position: center center; 
+    text-shadow: 0px 0px 13px rgba(0, 0, 0, 1);
+}
+
+.bannerblog{
+    background-image: url(bannerBlog.jpg) !important;
     background-attachment: fixed;
     background-size:   cover;
     background-repeat: no-repeat;
