@@ -6,8 +6,6 @@ class CreateDreams < ActiveRecord::Migration
       t.text :content
       t.integer :votes
       t.text :interpretation
-      t.string :tag1
-      t.string :tag2
 
       t.timestamps null: false
     end

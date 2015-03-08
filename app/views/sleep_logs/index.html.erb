@@ -12,7 +12,7 @@
     <%= l.date %>: <%= l.start_time %> -  <%= l.end_time %> [<%= slept_hours(l) %> hour(s)]
     <% if(l.user.dreams.where(date: l.date)) %>
         <% l.user.dreams.where(date: l.date).find_each do |d| %>
-            <%= link_to d.title, d %>
+            <%= link_to d.title, user_dream_path(user_id:current_user.id, id: d.id) %>
         <% end %>
     <% end %>
     <hr />

@@ -1,2 +1,11 @@
-<h1>Dreams#index</h1>
-<p>Find me in app/views/dreams/index.html.erb</p>
+<% if @user == current_user %>
+    <%= link_to new_user_dream_path, style:'float: right;', class:'btn btn-primary' do %><i class="fa fa-plus"></i> Add Entry<% end %>
+    <h1>Your Dream Journal</h1>
+<% else %>
+    <h1><%= @user.username.capitalize %>'s Dream Journal</h1>
+<% end %>
+<% @user.dreams.each do |dream| %>
+    <h3><%= link_to dream.title.capitalize, user_dream_path(user_id: @user.id, id:dream.id) %></h3><br />
+    <p><%= time_ago_in_words(dream.created_at) %> ago</p>
+    <hr />
+<% end %>
