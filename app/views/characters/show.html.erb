@@ -6,6 +6,20 @@
         <div class="btn btn-danger" style="float: right;">Real Character</div>
     <% end %>
     <h1><%= @character.name %></h1>
-    <p><%= @character.description %></p>
+    <div class="row">
+        <div class="col-xs-6">
+            <h3>Description</h3>
+            <p><%= @character.description %></p>
+        </div>
+        <div class="col-xs-6">
+            <h3>Personality</h3>
+            <p><%= @character.personality %></p>
+        </div>
+    </div>
+    <h2>Dreams where <%= @character.name %> appears</h2>
+    <% @character.dreams.each do |dream| %>
+        <%= link_to dream.title, user_dream_path(user_id:dream.user.id, id: dream.id) %>
+        <hr />
+    <% end %>
 <% end %>
 
