@@ -5,7 +5,6 @@ class CreateDreams < ActiveRecord::Migration
       t.boolean :public
       t.text :content
       t.integer :votes
-      t.text :interpretation
 
       t.timestamps null: false
     end
