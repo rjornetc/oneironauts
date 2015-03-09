@@ -17,5 +17,14 @@
           <%= link_to_add_association 'add Character', f, :dream_characters, class:'btn btn-success' %>
         </div>
     </div><br />
+    <div id='dream_locations'>
+        <%= f.label :dream_locations %>
+        <%= f.fields_for :dream_locations do |d| %>
+          <%= render 'dream_locations_fields', :f => d %>
+        <% end %>
+        <div class='links'>
+          <%= link_to_add_association 'add Locations', f, :dream_locations, class:'btn btn-success' %>
+        </div>
+    </div><br />
     <%= f.submit "Submit", class:'btn btn-primary' %>
 <% end %>

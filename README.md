@@ -10,10 +10,10 @@ We all have our own dreams. Dreaming is a unique experience that enriches our li
 
 ## Features
 * **Privacy Settings**
-* Dream Journal (coming soon)
+* **Dream Journal**
 * Dream Interpretations  (coming soon)
 * **Dream Sign Dictionary**
-* Character sheets (coming soon)
+* **Character sheets**
 * Location sheets (coming soon)
 * **Sleeping Logs**
 * **Graphs and Stats**

@@ -1,0 +1,12 @@
+<h1>New Location</h1>
+<%= form_for [current_user, Location.new] do |f| %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, class:'form-control' %><br />
+    <%= f.label :description %><br />
+    <%= f.text_area :description, class:'form-control' %><br />
+    <%= f.label :real %><br />
+    <%= f.check_box :real, class:'form-control' %><br />
+    <%= f.label :public %><br />
+    <%= f.check_box :public, class:'form-control' %><br />
+    <%= f.submit "Create", class:'btn btn-primary' %>
+<% end %>

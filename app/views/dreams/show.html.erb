@@ -7,4 +7,10 @@
 <h3>Characters</h3>
 <% @dream.characters.each do |char| %>
     <%= link_to char.name, user_character_path(user_id: @user.id, id: char.id) %>
+    <hr />
+<% end %>
+<h3>Locations</h3>
+<% @dream.locations.each do |loc| %>
+    <%= link_to loc.name, user_location_path(user_id: @user.id, id: loc.id) %>
+    <hr />
 <% end %>

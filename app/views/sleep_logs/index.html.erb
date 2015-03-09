@@ -25,14 +25,14 @@
        var url = "/users/<%=current_user.id%>/sleep_logs.json"
        var dream_json= $.getJSON(url, null, function(data) {
            var get_dream_data = dream_json.responseText;
-           new Morris.Area({
+           new Morris.Bar({
              element: 'dream_chart',
              data: $.parseJSON((get_dream_data)),
              xkey: 'date',
              resize: true,
              smooth: false,
              ykeys: ['log_dreams'],
-             lineColors: ['#3F61BA'],
+             barColors: ['#3F61BA'],
              labels: ['Dreams']
                }); done();
            }); 

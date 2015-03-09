@@ -58,7 +58,7 @@ class DreamsController < ApplicationController
   
   private
       def dream_params
-          params.require(:dream).permit(:title, :content, :votes, :user_id, :interpretation, :public, :date, dream_characters_attributes: [:id, :dream_id, :character_id, :_destroy])
+          params.require(:dream).permit(:title, :content, :votes, :user_id, :interpretation, :public, :date, dream_characters_attributes: [:id, :dream_id, :character_id, :_destroy], dream_locations_attributes: [:id, :dream_id, :location_id, :_destroy])
       end
       
       def dream_not_authorized
