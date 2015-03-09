@@ -1,6 +1,7 @@
 class SleepLog < ActiveRecord::Base
     belongs_to :user
     validates :date, uniqueness: true
+    order(:date)
     
     def log_dreams
       @dreams = Array.new
