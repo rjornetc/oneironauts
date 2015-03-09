@@ -4,7 +4,7 @@ class SleepLogsController < ApplicationController
 
 #  require 'rasem'
   def index
-      @sleep_logs = current_user.sleep_logs.find_each.order(:date)
+      @sleep_logs = current_user.sleep_logs.order(:date).find_each
       respond_to do |format|
         format.html # show.html.erb
         format.json { render :json => @sleep_logs.to_json(:methods => [:log_dreams, :log_hours]) }
