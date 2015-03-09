@@ -17,6 +17,8 @@ class CommentsController < ApplicationController
       authorize @comment
       if params[:commentable_type] == "Post"
           @commentable    = Post.find(params[:commentable_id])
+      elsif params[:commentable_type] == "Dream"
+          @commentable    = Dream.find(params[:commentable_id])
       elsif params[:commentable_type] == "Comment"
           @commentable    = Comment.find(params[:commentable_id])
       end
@@ -29,6 +31,8 @@ class CommentsController < ApplicationController
       end 
       if params[:commentable_type] == "Post"
           redirect_to post_path(params[:commentable_id])
+      elsif params[:commentable_type] == "Dream"
+          redirect_to user_dream_path(user_id:Dream.find(params[:commentable_id]).user_id , id: params[:commentable_id])
       elsif params[:commentable_type] == "Comment"
           redirect_to parent_post(@comment)
       end
@@ -66,6 +70,8 @@ class CommentsController < ApplicationController
       def parent_post(c)
           if c.has_attribute?(:commentable_id)
               parent_post(c.commentable)
+          elsif c.instance_of?(Dream)
+              user_dream_path(user_id: c.user_id, id: c.id)
           else
               c
           end

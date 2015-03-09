@@ -2,6 +2,10 @@
 <%= form_for [current_user, Character.new] do |f| %>
     <%= f.label :name %><br />
     <%= f.text_field :name, class:'form-control' %><br />
+    <%= f.label :age %><br />
+    <%= f.number_field :age, class:'form-control' %><br />
+    <%= f.label :gender %><br />
+    <%= f.select(:gender, [['Male', 1], ['Female', 2], ['Other', 3], ['Unknown', 4]], {},{ class:'form-control'}) %><br />
     <%= f.label :description %><br />
     <%= f.text_area :description, class:'form-control' %><br />
     <%= f.label :personality %><br />

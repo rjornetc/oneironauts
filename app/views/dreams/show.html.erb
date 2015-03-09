@@ -14,3 +14,15 @@
     <%= link_to loc.name, user_location_path(user_id: @user.id, id: loc.id) %>
     <hr />
 <% end %>
+<h2><i class="fa fa-comments-o"></i> Interpretations</h2>
+<% if @dream.comments.any? %>
+    <%= render 'comment_form' if current_user %>
+    <hr />
+    <% @dream.comments.each do |comment| %>
+        <%= render comment %>
+    <% end %>
+<% else %>
+    <h3>It looks like nobody has commented this post, why don't you share your thoughts?</h3>
+    <%= render 'comment_form' if current_user %>
+    <hr />
+<% end %>

@@ -7,4 +7,6 @@ class Dream < ActiveRecord::Base
     has_many :dream_locations, :dependent => :destroy
     has_many :locations, through: :dream_locations
     accepts_nested_attributes_for :dream_locations
+    
+    has_many :comments, :as => :commentable
 end

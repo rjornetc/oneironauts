@@ -59,7 +59,7 @@ class CharactersController < ApplicationController
   
   private
       def character_params
-          params.require(:character).permit(:name, :description, :public, :user_id, :real)
+          params.require(:character).permit(:name, :description, :public, :user_id, :real, :age, :gender)
       end
       
       def character_not_authorized
