@@ -4,7 +4,7 @@ class CreateDreams < ActiveRecord::Migration
       t.integer :user_id
       t.boolean :public
       t.text :content
-      t.integer :votes
+      t.integer :votes, default: 0
 
       t.timestamps null: false
     end
