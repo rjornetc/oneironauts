@@ -4,7 +4,7 @@ class SleepLog < ActiveRecord::Base
     
     def log_dreams
       @dreams = Array.new
-      @dreams = self.user.dreams.where(date: self.date).find_each
+      @dreams = self.user.dreams.where(date: self.date).order(:date).find_each
       puts @dreams
       return @dreams.count
     end
