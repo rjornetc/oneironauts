@@ -9,4 +9,7 @@ class Dream < ActiveRecord::Base
     accepts_nested_attributes_for :dream_locations
     
     has_many :comments, :as => :commentable
+    
+    has_many :voters, :as => :votable
+    has_many :users, through: :voters, :as => :votable
 end

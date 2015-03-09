@@ -24,6 +24,8 @@ class VotersController < ApplicationController
         redirect_to post_path(@votable)
     elsif params[:votable_type] == 'Meaning'
         redirect_to dream_sign_path(@votable.dream_sign_id)
+    elsif params[:votable_type] == 'Dream'
+        redirect_to user_dream_path(user_id: @votable.user.id, id:@votable.id)
     elsif params[:votable_type] == 'Comment'
         redirect_to post_path(parent_post(@votable))
     end 
@@ -46,6 +48,8 @@ class VotersController < ApplicationController
         redirect_to post_path(@votable)
     elsif params[:votable_type] == 'Meaning'
         redirect_to dream_sign_path(@votable.dream_sign_id)
+    elsif params[:votable_type] == 'Dream'
+        redirect_to user_dream_path(user_id: @votable.user.id, id:@votable.id)
     elsif params[:votable_type] == 'Comment'
         redirect_to post_path(parent_post(@votable))
     end
@@ -55,6 +59,8 @@ class VotersController < ApplicationController
       def parent_post(c)
           if c.has_attribute?(:commentable_id)
               parent_post(c.commentable)
+          elsif c.instance_of?(Dream)
+              user_dream_path(user_id: c.user_id, id: c.id)
           else
               c
           end
@@ -70,6 +76,8 @@ class VotersController < ApplicationController
               @votable = Post.find(params[:votable_id])
           elsif params[:votable_type] == 'Meaning'
               @votable = Meaning.find(params[:votable_id])
+          elsif params[:votable_type] == 'Dream'
+              redirect_to Dream.find(params[:votable_id])
           elsif params[:votable_type] == 'Comment'
               @votable = Comment.find(params[:votable_id])
           end
