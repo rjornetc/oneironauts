@@ -14,6 +14,11 @@
     <%= link_to loc.name, user_location_path(user_id: @user.id, id: loc.id) %>
     <hr />
 <% end %>
+<h3>Tags</h3>
+<% @dream.dream_tags.each do |tag| %>
+    <%= link_to tag.name, dream_tag_path(tag.id) %>
+    <hr />
+<% end %>
 <p><%= @dream.votes %> <i class="fa fa-heart-o"></i> | <%= time_ago_in_words(@dream.created_at) %> ago
 </p>
 <% if current_user && !@dream.voters.find_by_user_id(current_user.id) && @dream.user != current_user %>

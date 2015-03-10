@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :dream_tags
+
   get 'sleep_guide' => 'sleep_guide#index'
 
   resources :board_messages
@@ -17,10 +19,10 @@ Rails.application.routes.draw do
   end
 
   resources :group_users
-  
+
   resources :groups
-  
-  resources :friendships  
+
+  resources :friendships
 
   resources :logs
 
@@ -39,15 +41,15 @@ Rails.application.routes.draw do
           registrations: 'users/registrations',
           omniauth_callbacks: 'users/omniauth_callbacks'
   }, :path => "users"
-  
+
   devise_scope :user do
       get 'user/:id/profile' => 'users/registrations#show', as: 'user_profile'
       get 'user/:id/delete_avatar' => 'users/registrations#delete_avatar', as: 'delete_avatar'
     end
-    
+
   resources :users do
       resources :sleep_logs
-      resources :dreams 
+      resources :dreams
       resources :characters
       resources :locations
   end

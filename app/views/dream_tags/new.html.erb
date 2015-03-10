@@ -1,0 +1,6 @@
+<h1>Creating a new Tag</h1>
+<%= form_for @tag do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit 'Submit', class:'btn btn-primary' %>
+<% end %>
