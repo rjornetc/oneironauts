@@ -16,5 +16,9 @@
     <%= f.check_box :public, class:'form-control' %><br />
     <%= f.label :attachment %><br />
     <%= f.file_field :icon %><br/>
+    <div class="well">
+        <h2>Important note</h2>
+        <p>We take our user's privacy very seriously, so we encrypt your dreams content attached images. Remember that you shouldn't upload any kind of image that could break our privacy and content policies.</p>
+    </div>
     <%= f.submit "Create", class:'btn btn-primary' %>
 <% end %>
