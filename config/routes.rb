@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   resources :badges
+  
+  resources :characters
+  
+  resources :locations
 
   resources :challenges
 
