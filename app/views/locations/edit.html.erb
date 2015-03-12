@@ -1,2 +1,17 @@
-<h1>Docations#edit</h1>
-<p>Find me in app/views/docations/edit.html.erb</p>
+<h1>Edit Location</h1>
+<%= form_for @location do |f| %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, class:'form-control' %><br />
+    <%= f.label :description %><br />
+    <%= f.text_area :description, class:'form-control' %><br />
+    <%= f.label :real %><br />
+    <%= f.check_box :real, class:'form-control' %><br />
+    <%= f.label :public %><br />
+    <%= f.check_box :public, class:'form-control' %><br />
+    <% if @location.icon.exists? %>
+      <%= image_tag @location.icon.url %>
+    <% end %>
+    <%= f.label :attachment %><br />
+    <%= f.file_field :icon %><br/>
+    <%= f.submit "Create", class:'btn btn-primary' %>
+<% end %>

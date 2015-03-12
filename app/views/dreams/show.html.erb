@@ -4,6 +4,9 @@
 <h1><%= @dream.title.capitalize %></h1>
 <%= @dream.date %><br />
 <%= @dream.content %><br />
+<% if @dream.icon.exists? %>
+  <%= image_tag @dream.icon.url %>
+<% end %>
 <h3>Characters</h3>
 <% @dream.characters.each do |char| %>
     <%= link_to char.name, user_character_path(user_id: @user.id, id: char.id) %>

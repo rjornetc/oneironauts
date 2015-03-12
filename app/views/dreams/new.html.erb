@@ -8,6 +8,12 @@
     <%= f.date_select :date, class:'form-control' %><br />
     <%= f.label :public %><br />
     <%= f.check_box :public, class:'form-control' %><br />
+    <%= f.label :attachment %><br />
+    <%= f.file_field :icon %><br/>
+    <div class="well">
+        <h2>Important note</h2>
+        <p>We take our user's privacy very seriously, so we encrypt your dreams content attached images. Remember that you shouldn't upload any kind of image that could break our privacy and content policies.</p>
+    </div>
     <div id='dream_characters'>
         <%= f.label :dream_characters %>
         <%= f.fields_for :dream_characters do |d| %>
@@ -27,7 +33,7 @@
         </div>
     </div><br />
     <div id='dream_has_tags'>
-        <%= f.label :dream_has_tags %>
+        <%= f.label :dream_has_tags, "Dream Tags" %>
         <%= f.fields_for :dream_has_tags do |d| %>
           <%= render 'dream_locations_fields', :f => d %>
         <% end %>

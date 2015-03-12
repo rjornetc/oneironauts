@@ -8,6 +8,11 @@
     <%= f.date_select :date, class:'form-control' %><br />
     <%= f.label :public %><br />
     <%= f.check_box :public, class:'form-control' %><br />
+    <% if @dream.icon.exists? %>
+      <%= image_tag @dream.icon.url %>
+    <% end %>
+    <%= f.label :attachment %><br />
+    <%= f.file_field :icon %><br/>
     <div id='dream_characters'>
         <%= f.label :dream_characters %>
         <%= f.fields_for :dream_characters do |d| %>

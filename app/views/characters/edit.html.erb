@@ -14,5 +14,10 @@
     <%= f.check_box :real, class:'form-control' %><br />
     <%= f.label :public %><br />
     <%= f.check_box :public, class:'form-control' %><br />
+    <% if @character.icon.exists? %>
+      <%= image_tag @character.icon.url %>
+    <% end %>
+    <%= f.label :attachment %><br />
+    <%= f.file_field :icon %><br/>
     <%= f.submit "Save", class:'btn btn-primary' %>
 <% end %>
