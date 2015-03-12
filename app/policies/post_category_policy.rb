@@ -7,13 +7,16 @@ class PostCategoryPolicy
   end
 
   def create?
-    @record.user != @user
+    @user && @user.role.name == 'admin'
+  end
+
+  def update?
+    @user && @user.role.name == 'admin'
   end
 
   def destroy?
-    @record.user != @user
+    @record.user == @user && @user.role.name == 'admin'
   end
 
 
 end
-
