@@ -25,5 +25,5 @@ class CategoryPolicy
   def destroy?
     @record.user == @user && @user.role.name == 'admin'
   end
-  
+
 end
