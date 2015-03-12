@@ -1,2 +1,9 @@
-<h1>Challenges#index</h1>
-<p>Find me in app/views/challenges/index.html.erb</p>
+<h1>Challenges</h1>
+
+<% @challenges.each do |c| %>
+    <h3><%= @challenge.name %></h3>
+    <% if @challenge.limit_date %>
+      <h3>Active until <%= @challenge.limit_date %></h3>
+    <% end %>
+    <!-- TODO add Badge Icon Image tag -->
+<% end %>

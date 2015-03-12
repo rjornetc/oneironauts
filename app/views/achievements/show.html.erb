@@ -1,2 +1,11 @@
-<h1>Achievements#show</h1>
-<p>Find me in app/views/achievements/show.html.erb</p>
+<h1><%= @achievement.name %></h1>
+
+<%= @achievement.description %>
+
+<!-- TODO add Badge Icon Image tag -->
+
+<h2>Achievers</h2>
+<%= @achievement.users.each do |u| %>
+    <%= u.username %>
+    <hr/>
+<% end %>

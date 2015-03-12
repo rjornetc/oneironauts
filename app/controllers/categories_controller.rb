@@ -58,7 +58,7 @@ class CategoriesController < ApplicationController
           params.require(:category).permit(:name, :user_id)
       end
 
-      def post_not_authorized
+      def category_not_authorized
         flash[:alert] = "You aren't allowed to do that."
         redirect_to(request.referrer || root_path)
       end

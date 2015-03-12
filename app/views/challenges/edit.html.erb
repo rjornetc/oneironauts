@@ -1,2 +1,10 @@
-<h1>Challenges#edit</h1>
-<p>Find me in app/views/challenges/edit.html.erb</p>
+<h1>Edit Challenge</h1>
+<%= form_for @challenge do |f| %>
+  <%= f.label :name %><br/>
+  <%= f.text_field :name, class:'form-control' %><br/>
+  <%= f.label :description %><br/>
+  <%= f.text_area :description, class:'form-control' %><br/>
+  <%= f.label :badge %><br/>
+  <%= f.collection_select :badge_id, Badge.all, :id, :name, {}, {class:'form-control'} %><br/>
+  <%= f.submit 'Submit', class:'btn btn-primary'%>
+<% end %>

@@ -1,2 +1,11 @@
-<h1>Challenges#show</h1>
-<p>Find me in app/views/challenges/show.html.erb</p>
+<h1><%= @challenge.name %></h1>
+
+<%= @challenge.description %>
+
+<!-- TODO add Badge Icon Image tag -->
+
+<h2>Participants</h2>
+<%= @challenge.users.order(:points).each do |u| %>
+    <%= u.username %>
+    <hr/>
+<% end %>
