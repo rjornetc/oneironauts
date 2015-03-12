@@ -1,2 +1,9 @@
-<h1>Badges#new</h1>
-<p>Find me in app/views/badges/new.html.erb</p>
+<h1>New Badge</h1>
+<%= form_for @badge do |f| %>
+  <%= f.label :name %><br/>
+  <%= f.text_field :name, class:'form-control' %><br/>
+  <%= f.file_field :icon %>
+  <%= f.label :description %><br/>
+  <%= f.text_area :description, class:'form-control' %><br/>
+  <%= f.submit 'Submit', class:'btn btn-primary'%>
+<% end %>

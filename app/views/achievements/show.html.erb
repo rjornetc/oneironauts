@@ -2,7 +2,7 @@
 
 <%= @achievement.description %>
 
-<!-- TODO add Badge Icon Image tag -->
+<%= image_tag @achievement.badge.icon.url %>
 
 <h2>Achievers</h2>
 <%= @achievement.users.each do |u| %>

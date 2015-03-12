@@ -1,6 +1,6 @@
 <h1>Achievements</h1>
 
 <% @achievements.each do |c| %>
-    <h3><%= @achievement.name %></h3>
-    <!-- TODO add Badge Icon Image tag -->
+    <h3><%= c.name %></h3>
+    <%= image_tag c.badge.icon.url %>
 <% end %>

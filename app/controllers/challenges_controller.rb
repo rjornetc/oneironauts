@@ -13,7 +13,7 @@ class ChallengesController < ApplicationController
   end
 
   def create
-      @challenge = Challenge.find(params[:id])
+      @challenge = Challenge.create(challenge_params)
       authorize @challenge
       if @challenge.save
         flash[:notice] = "Challenge created."

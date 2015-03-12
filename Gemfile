@@ -20,6 +20,7 @@ gem 'impressionist'
 gem 'omniauth-twitter'
 gem 'gravtastic'
 gem 'paperclip'
+gem 'aws-sdk'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -52,4 +53,3 @@ gem 'puma'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-

@@ -12,7 +12,7 @@ class AchievementsController < ApplicationController
   end
 
   def create
-      @achievement = Achievement.find(params[:id])
+      @achievement = Achievement.create(achievement_params)
       authorize @achievement
       if @achievement.save
         flash[:notice] = "Achievement created."

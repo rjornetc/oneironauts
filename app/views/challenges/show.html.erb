@@ -2,7 +2,7 @@
 
 <%= @challenge.description %>
 
-<!-- TODO add Badge Icon Image tag -->
+<%= image_tag @challenge.badge.icon.url %>
 
 <h2>Participants</h2>
 <%= @challenge.users.order(:points).each do |u| %>

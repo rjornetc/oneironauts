@@ -13,7 +13,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
-      @category = Category.find(params[:id])
+      @category = Category.create(category_params)
       authorize @category
       @category.user = current_user
       if @category.save
