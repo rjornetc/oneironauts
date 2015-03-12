@@ -1,4 +1,4 @@
-class PostCategoryPolicy
+class ChallengePolicy
   attr_reader :user, :record
 
   def initialize(user, record)
