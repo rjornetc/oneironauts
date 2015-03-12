@@ -16,4 +16,8 @@ class Dream < ActiveRecord::Base
     has_many :dream_has_tags, :dependent => :destroy
     has_many :dream_tags, through: :dream_has_tags
     accepts_nested_attributes_for :dream_has_tags
+
+    has_attached_file :icon, :styles => { :medium => "300x300>", :thumb => "100x100>" }, s3_permissions: :private,
+                         s3_server_side_encryption: :aes256
+    validates_attachment_content_type :icon, :content_type => /\Aimage\/.*\Z/
 end

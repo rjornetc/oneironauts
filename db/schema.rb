@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312222353) do
+ActiveRecord::Schema.define(version: 20150312225131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,11 +68,15 @@ ActiveRecord::Schema.define(version: 20150312222353) do
     t.boolean  "real"
     t.boolean  "public"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.text     "personality"
     t.integer  "age"
     t.integer  "gender"
+    t.string   "icon_file_name"
+    t.string   "icon_content_type"
+    t.integer  "icon_file_size"
+    t.datetime "icon_updated_at"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -130,10 +134,14 @@ ActiveRecord::Schema.define(version: 20150312222353) do
     t.text     "interpretation"
     t.string   "tag1"
     t.string   "tag2"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.date     "date"
     t.string   "title"
+    t.string   "icon_file_name"
+    t.string   "icon_content_type"
+    t.integer  "icon_file_size"
+    t.datetime "icon_updated_at"
   end
 
   create_table "friendships", force: :cascade do |t|
@@ -189,9 +197,13 @@ ActiveRecord::Schema.define(version: 20150312222353) do
     t.string   "name"
     t.text     "description"
     t.boolean  "public"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.boolean  "real"
+    t.string   "icon_file_name"
+    t.string   "icon_content_type"
+    t.integer  "icon_file_size"
+    t.datetime "icon_updated_at"
   end
 
   create_table "logs", force: :cascade do |t|
