@@ -1,5 +1,53 @@
 Rails.application.routes.draw do
 
+  get 'achievements/index'
+
+  get 'achievements/new'
+
+  get 'achievements/create'
+
+  get 'achievements/edit'
+
+  get 'achievements/update'
+
+  get 'achievements/delete'
+
+  get 'achievements/destroy'
+
+  get 'achievements/show'
+
+  get 'badges/index'
+
+  get 'badges/new'
+
+  get 'badges/create'
+
+  get 'badges/edit'
+
+  get 'badges/update'
+
+  get 'badges/delete'
+
+  get 'badges/destroy'
+
+  get 'badges/show'
+
+  get 'challenges/index'
+
+  get 'challenges/new'
+
+  get 'challenges/create'
+
+  get 'challenges/edit'
+
+  get 'challenges/update'
+
+  get 'challenges/delete'
+
+  get 'challenges/destroy'
+
+  get 'challenges/show'
+
   resources :dream_tags
 
   get 'sleep_guide' => 'sleep_guide#index'
