@@ -1,52 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'achievements/index'
+  resources :badges
 
-  get 'achievements/new'
+  resources :challenges
 
-  get 'achievements/create'
-
-  get 'achievements/edit'
-
-  get 'achievements/update'
-
-  get 'achievements/delete'
-
-  get 'achievements/destroy'
-
-  get 'achievements/show'
-
-  get 'badges/index'
-
-  get 'badges/new'
-
-  get 'badges/create'
-
-  get 'badges/edit'
-
-  get 'badges/update'
-
-  get 'badges/delete'
-
-  get 'badges/destroy'
-
-  get 'badges/show'
-
-  get 'challenges/index'
-
-  get 'challenges/new'
-
-  get 'challenges/create'
-
-  get 'challenges/edit'
-
-  get 'challenges/update'
-
-  get 'challenges/delete'
-
-  get 'challenges/destroy'
-
-  get 'challenges/show'
+  resources :achievements
 
   resources :dream_tags
 
@@ -55,8 +13,6 @@ Rails.application.routes.draw do
   resources :board_messages
 
   resources :voters
-
-  resources :post_categories
 
   resources :categories
 
