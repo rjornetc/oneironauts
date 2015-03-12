@@ -20,7 +20,7 @@ gem 'impressionist'
 gem 'omniauth-twitter'
 gem 'gravtastic'
 gem 'paperclip'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
