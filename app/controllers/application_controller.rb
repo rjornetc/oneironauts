@@ -31,6 +31,9 @@ class ApplicationController < ActionController::Base
     
     def add_log(user_id, owner_id, points, notificable, description)
         Log.create(user_id: user_id, owner_id: owner_id, points: points, notificable: notificable, description: description).save
+        u = User.find(user_id)
+        u.points += points
+        u.save
     end
   
     def configure_permitted_parameters

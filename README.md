@@ -25,7 +25,7 @@ We all have our own dreams. Dreaming is a unique experience that enriches our li
 - [X] Information Guides
 - [X] Social Sign Up (OmniAuth)
 - [ ] Point Awarding System (coming soon)
-- [X] Quests, badges and achievements (coming soon)
+- [X] Quests, badges and achievements
 - [ ] Activity Feed and Notifications (coming soon)
 - [ ] Open API (coming soon)
 - [ ] Multi-Platform (coming soon)
