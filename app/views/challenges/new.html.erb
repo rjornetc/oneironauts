@@ -2,6 +2,8 @@
 <%= form_for @challenge do |f| %>
   <%= f.label :name %><br/>
   <%= f.text_field :name, class:'form-control' %><br/>
+  <%= f.label :conditions %><br/>
+  <%= f.text_field :conditions, class:'form-control' %><br/>
   <%= f.label :description %><br/>
   <%= f.text_area :description, class:'form-control' %><br/>
   <%= f.label :badge %><br />

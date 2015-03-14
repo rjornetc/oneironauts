@@ -1,6 +1,7 @@
+<%= link_to new_achievement_path, style:'float: right;', class:'btn btn-primary' do %><i class="fa fa-plus"></i> Add Achievement<% end %>
 <h1>Achievements</h1>
 
 <% @achievements.each do |c| %>
     <h3><%= c.name %></h3>
-    <%= image_tag c.badge.icon.url %>
+    <%= image_tag c.icon.url %>
 <% end %>
