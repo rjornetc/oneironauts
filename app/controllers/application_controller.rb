@@ -28,6 +28,10 @@ class ApplicationController < ActionController::Base
             end
         end
     end
+    
+    def add_log(user_id, owner_id, points, notificable, description)
+        Log.create(user_id: user_id, owner_id: owner_id, points: points, notificable: notificable, description: description).save
+    end
   
     def configure_permitted_parameters
         devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:username, :email, :password, :password_confirmation, :current_password, :remember_me) }

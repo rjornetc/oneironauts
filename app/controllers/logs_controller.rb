@@ -19,4 +19,16 @@ class LogsController < ApplicationController
 
   def delete
   end
+  
+  protected
+      def modify_points(user_id, points)
+          @user = User.find(user_id)
+          @user.points += points
+          @user.save
+      end
+      
+  private
+      def log_params
+          params.require(:log).permit(:user_id, :owner_id, :points, :notificable, :description)
+      end
 end
