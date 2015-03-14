@@ -5,7 +5,7 @@
 <%= image_tag @achievement.icon.url %>
 
 <h2>Achievers</h2>
-<%= @achievement.users.each do |u| %>
+<% @achievement.users.each do |u| %>
     <%= u.username %>
     <hr/>
 <% end %>

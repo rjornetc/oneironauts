@@ -12,6 +12,30 @@
     <% elsif  current_user && @user != current_user and current_user.friends.include?(@user)  %>
         <%= link_to "Remove Friend", friendship_path(friend_id: @user), :method => :delete %>
     <% end %>
+    
+    <h2 style="text-align: center;">Badges</h2>
+    <div class="row">
+        <div class="col-xs-6">
+            <h3 style="text-align: center;">Challenges</h3>
+            <% @user.participants.each do |a| %>
+                <%= image_tag a.challenge.icon.url %>
+                <%= a.challenge.name %>
+                <% if a.done %>
+                    <div class="btn btn-success"><i class="fa fa-star"></i>Done</div>
+                <% end %>
+                <hr />
+            <% end %>
+        </div>
+        <div class="col-xs-6">
+            <h3 style="text-align: center;">Achievements</h3>
+            <% @user.achieveds.each do |a| %>
+                <%= image_tag a.achievement.icon %>
+                <%= a.achievement.name %>
+                <hr />
+            <% end %>
+        </div>
+    </div>
+    <hr />
     <div class="row">
         <div class="col-xs-4">
             <h3 style="text-align: center;">Friends</h3>

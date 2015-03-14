@@ -2,7 +2,7 @@ class ParticipantsController < ApplicationController
 
     def create
       @challenge = Challenge.find(params[:challenge_id])
-      @participant = @challenge.challenge_users.build(:user_id => params[:user_id])
+      @participant = @challenge.participants.build(:user_id => params[:user_id])
       @participant.done= false
       authorize @participant
       if @participant.save

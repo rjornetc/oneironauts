@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :badges
 
   resources :challenges
+  
+  resources :participants
 
   resources :achievements
 

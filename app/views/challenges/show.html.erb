@@ -1,5 +1,10 @@
 <h1><%= @challenge.name %></h1>
-
+<% if (current_user and !@challenge.participants.find_by_user_id(current_user.id)) %>
+    <%= link_to participants_path(challenge_id: @challenge.id, user_id: current_user.id, done:false), :method => :post, class:'btn btn-primary' do %><i class="fa fa-plus"></i> Join<% end %>
+<% end %>
+<% if (current_user and @challenge.participants.find_by_user_id(current_user.id)) %>
+    <%= link_to participant_path(challenge_id: @challenge.id, user_id: current_user.id), method: :delete, class: 'btn btn-danger' do %><i class="fa fa-minus"></i> Leave Challenge<% end %>
+<% end %>
 <%= @challenge.description %>
 <% if @challenge.icon.exists? %>
   <%= image_tag @challenge.icon.url %>

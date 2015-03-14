@@ -2,7 +2,7 @@ class AchievedsController < ApplicationController
 
     def create
       @achievement = Achievement.find(params[:achievement_id])
-      @achieved = @achievement.achievement_users.build(:user_id => params[:user_id])
+      @achieved = @achievement.achieveds.build(:user_id => params[:user_id])
       @achieved.done= false
       authorize @achieved
       if @achieved.save

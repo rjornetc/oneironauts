@@ -16,8 +16,8 @@ class User < ActiveRecord::Base
   has_many :participants, dependent: :destroy
   has_many :challenges, through: :participants
 
-  has_many :achieved, dependent: :destroy
-  has_many :achievements, through: :participants
+  has_many :achieveds, dependent: :destroy
+  has_many :achievements, through: :achieveds
 
   has_many :dreams
   has_many :characters
