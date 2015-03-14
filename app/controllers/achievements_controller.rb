@@ -52,7 +52,7 @@ class AchievementsController < ApplicationController
 
   private
       def achievement_params
-          params.require(:achievement).permit(:name, :badge_id, :description)
+          params.require(:achievement).permit(:name, :description, :icon)
       end
 
       def achievement_not_authorized

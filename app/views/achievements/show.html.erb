@@ -2,7 +2,7 @@
 
 <%= @achievement.description %>
 
-<%= image_tag @achievement.badge.icon.url %>
+<%= image_tag @achievement.icon.url %>
 
 <h2>Achievers</h2>
 <%= @achievement.users.each do |u| %>

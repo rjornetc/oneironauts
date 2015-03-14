@@ -53,7 +53,7 @@ class ChallengesController < ApplicationController
 
   private
       def challenge_params
-          params.require(:challenge).permit(:name, :badge_id, :description)
+          params.require(:challenge).permit(:name, :description, :icon)
       end
 
       def challenge_not_authorized
