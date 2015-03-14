@@ -15,15 +15,15 @@ class AchievementPolicy
   end
 
   def edit?
-    @user && @record.user == @user  && @user.role.name == 'admin'
+    @user && @user.role.name == 'admin'
   end
 
   def update?
-    @user && @record.user == @user  && @user.role.name == 'admin'
+    @user && @user.role.name == 'admin'
   end
 
   def destroy?
-    @record.user == @user && @user.role.name == 'admin'
+    @user && @user.role.name == 'admin'
   end
 
 
