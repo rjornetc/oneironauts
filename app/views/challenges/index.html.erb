@@ -1,7 +1,7 @@
 <h1>Challenges</h1>
 
 <% @challenges.each do |c| %>
-    <h3><%= c.name %></h3>
+    <h3><%= link_to c.name, c %></h3>
     <% if c.limit_date %>
       <h3>Active until <%= c.limit_date %></h3>
       <%= image_tag c.badge.icon.url %>
