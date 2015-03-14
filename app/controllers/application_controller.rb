@@ -11,23 +11,19 @@ class ApplicationController < ActionController::Base
     def check_user_achievements
         User.all.each do |user|
             Achievement.all.each do |a|
-                if a.conditions.is_a?(Boolean)
-                    if eval(a.conditions.to_s)
-                        Achieved.where(user_id: user.id, achievement_id: a.id).first_or_create
-                    end
+                if eval(a.conditions.to_s)
+                    Achieved.where(user_id: user.id, achievement_id: a.id).first_or_create
                 end
             end
         end
         
        Challenge.all.each do |a|
            a.users.each do |user|
-                if a.conditions.is_a?(Boolean)
-                    if eval(a.conditions.to_s)
-                        p = Participant.where(user_id: user.id, challenge_id: a.id).first
-                        p.done = true 
-                        p.done_date = Time.now
-                        p.save
-                    end
+                if eval(a.conditions.to_s)
+                    p = Participant.where(user_id: user.id, challenge_id: a.id).first
+                    p.done = true 
+                    p.done_date = Time.now
+                    p.save
                 end
             end
         end
