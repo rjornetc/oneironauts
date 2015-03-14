@@ -1,11 +1,11 @@
 <h1><%= @challenge.name %></h1>
 
 <%= @challenge.description %>
-
-<%= image_tag @challenge.icon.url %>
-
+<% if @challenge.icon.exists? %>
+  <%= image_tag @challenge.icon.url %>
+<% end %>
 <h2>Participants</h2>
-<%= @challenge.users.order(:points).each do |u| %>
+<% @challenge.users.order(:points).each do |u| %>
     <%= u.username %>
     <hr/>
 <% end %>
